@@ -1,0 +1,84 @@
+<!--pages/mall/counter/counter.wxml-->
+<view class="body" style="padding-bottom:100px;">
+    <view class="member_list" wx:for="{{gdlist}}" wx:key="goodsList">
+        <view class="member_list_l">
+            <image style="" mode="aspectFill" wx:if="{{item.carGoods.goodsImage}}" src="{{item.carGoods.goodsImage}}"></image>
+            <image style="" mode="aspectFill" wx:else src="{{imgCommonUrl}}/xcximages/shartaskBackground.png"></image>
+        </view>
+        <view class="member_list_r">
+            <view class="member_name">{{item.carGoods.goodsName}}</view>
+            <view class="member_spec">{{item.specTypeString}}</view>
+        <view class="member_price" wx:if="{{isJF == 1}}">{{item.carGoods.scoreCount}}</view>
+
+    <view class="member_price" wx:else>￥{{item.spprice}}</view>
+        </view>
+        <view class="num" wx:if="{{isJF == 1}}">
+           
+        </view>
+         <view class="num" wx:else>
+            <view class="leftnav" data-index="{{index}}" bindtap="total_sub">-</view>
+            <input type="number" class="shownum" value="{{item.number}}" data-index="{{index}}" bindinput="changeCount" bindblur="checkMin" />
+          
+            <view class="rightnav"  data-index="{{index}}" bindtap="total_add">+</view>
+        </view>
+    </view>
+    <view class="addressWrap" bindtap="addAddr">
+        <view class="addr" wx:if="{{addressInfo!= ''}}">
+            <view class="name">收货人：{{addressInfo.deliveryName}}</view>
+            <view class="name">号码：{{addressInfo.deliveryPhone}}</view>
+            <view class="name">邮编：{{addressInfo.postCode}}</view>
+            <view class="address">详细地址：{{addressInfo.shoppingAddress}}</view>
+            <view class="name-addr">点击修改收货地址>></view>
+        </view>
+        <view class="choose" wx:else>请选择收货地址></view>
+    </view>
+    <view class="chooseCard">
+       <view class="weui-cell weui-cell_access" bindtap='goMyTicket'>
+                <view class="weui-cell__bd">优惠券</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:if="{{ticketMoney > 0}}"><text style="color:#fe6463">{{ticketMoney}}元</text>的优惠券</view>
+                 <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>
+                    <text wx:if="{{isTicket == 1 && yhq == true}}" style="color:#fe6463">有可用的优惠券</text>
+                    <text wx:else>没有可用的优惠券</text>
+                 </view>
+        </view>
+    </view>
+    <view class="remarks">
+        <textarea name="remarks" placeholder="备注" maxlength="240" bindinput="remarks_bindinput" />
+        </view>
+    <view class="counts-price">
+        <view class="counts-item" wx:if="{{isJF == 1}}">
+            <text class="counts-item-name">积分</text>
+            <text class="counts-item-price">{{scoreTotal}}</text>
+        </view>
+        <view class="counts-item" wx:else>
+            <text class="counts-item-name">商品金额</text>
+            <text class="counts-item-price">￥{{total_price}}</text>
+        </view>
+        <view class="counts-item">
+            <text class="counts-item-name">运费</text>
+            <text class="counts-item-price">+￥0</text>
+        </view>
+        <view class="counts-item">
+            <text class="counts-item-name">优惠</text>
+            <text class="counts-item-price">-￥{{ticketMoney>0?ticketMoney:0}}</text>
+        </view>
+    </view>
+    <view class="bottom-button">
+        <view class="actual-price" wx:if="{{isJF == 1}}">所需积分：<text style="color: #ff3825;">{{scoreTotal}}</text></view>
+        <view class="actual-price" wx:else>实付款：<text style="color: #ff3825;">￥{{shifukuan}}</text></view>
+        <view class="go-pay" wx:if="{{isJF==1}}" bindtap="placeAnOrder" data-type="4">兑换</view>
+        <view class="go-pay" wx:else bindtap="placeAnOrder1">支付</view>
+    </view>
+    <view class="layer" hidden="{{hidden}}" catchtap="hide_choose">
+        <view class="tips" hidden="{{hidden}}">
+            <view class="del" bindtap="hideTips">
+                <icon type="clear" size="24" style="position:absolute;right:8px;top:0;z-index:3;"></icon>
+            </view>
+            <view class="title">请选择支付方式</view>
+            <view class="payment_method">
+                <button hidden="{{hidden}}" bindtap="placeAnOrder" data-type="2" style="background:#0A87C7;">线下支付</button>
+                <button bindtap="placeAnOrder" data-type="1">微信支付</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/personal/collect/collect.wxml-->
+<view class="body">
+   
+    <view class="searchbar-result flex-wrap" wx:if="{{collectionList.length>0}}">
+        <block wx:for="{{collectionList}}" wx:for-index="itemKey" wx:key="collectionList" wx:for-item="goodsInfo">
+            <navigator style="width:100%;border-bottom:1px solid #f2f2f2" url="/pages/mall/detail/detail?groupId={{appId}}&goodsId={{goodsInfo.goodsId}}">
+                
+                <view class="member_list">
+                    <view class="cltimg">
+                      <view class="cltimgxj" wx:if="{{goodsInfo.goodsCommon.isSelled == 0}}">
+                        <text>商品已下架</text>
+                      </view>
+                      <view class="cltimgxj" wx:if="{{goodsInfo.goodsCommon.goodsStatus == 2}}">
+                        <text>商品已删除</text>
+                      </view>
+                      <image class="member_list_l" src="{{goodsInfo.goodsCommon.goodsImageUrl}}"></image>
+                    </view>
+                    
+                    <view class="member_list_r">
+                        <view class="member_name">{{goodsInfo.goodsCommon.goodsName}}
+                        </view>
+                        <view class="price">售价：{{goodsInfo.goodsCommon.sellPrice}}元</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+    <view class="tips" wx:else>
+    <view class="tips-text">您还没有收藏商品哦</view>
+    <view class="button-go-mall back-commmon-color" bindtap="gotoMall">去逛逛</view>
+</view>
+</view>

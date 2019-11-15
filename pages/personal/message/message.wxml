@@ -1,0 +1,16 @@
+<!--pages/personal/message/message.wxml-->
+<view class="page-message">
+    <view class="message-list">
+        <view class="message-item" wx:for="{{messageList}}" wx:key="messageList" wx:for-item="msg" wx:for-key="{{index}}">
+            <image class="messgae-image" mode="aspectFill" src="{{imgCommonUrl}}/vij/vijlogo.jpg"></image>
+            <view class="message-right">
+                <view class="message-title">{{msg.title}}</view>
+                <view class="message-content">{{msg.content}}</view>
+                <view class="message-time">{{msg.createTime}}</view>
+            </view>        
+        </view>        
+    </view>
+    <view class="tips" wx:if="{{isEmptyPage}}">
+        您暂时没有收到消息哦
+    </view>
+</view>

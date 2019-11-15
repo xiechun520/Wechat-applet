@@ -1,0 +1,36 @@
+<!--pages/descovery/index.wxml-->
+<view class="body">
+<view wx:if="{{news.length > 0}}">
+    <block wx:for="{{news}}" wx:key="*news">
+        <view class="swiper_item" bindtap="goDetail" id="{{item.descoveryId}}">
+            <view class="c_title tit">{{item.descoveryTitle}}</view>
+            <view class="img_box {{item.Newsimgs==null?'':item.classlength==1?'h1':'h0'}}">
+                <block wx:for="{{item.imagesList}}" wx:for-item="image" wx:key="imageslist">
+                    <image wx:if="{{item.imagesList.length==3}}" class="three-open" src="{{image}}" mode="aspectFill">
+                    </image>
+                    <image wx:if="{{item.imagesList.length==2}}" class="two-open" src="{{image}}" mode="aspectFill">
+                    </image>
+                    <image wx:if="{{item.imagesList.length==1}}" class="one-open" src="{{image}}" mode="aspectFill">
+                    </image>
+                </block>
+            </view>
+            <view class="c_bottom">
+                <!-- <view class="c_auther">
+                        匿名
+                    </view> -->
+                <view class="c_read">
+                    阅读数：{{item.readCount}}
+                </view>
+                <view class="c_like">
+                    <!-- 后台传值拼写错误 应为为prise(n. 奖赏;) -->
+                    喜欢：{{item.pariseCount}}
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<view class="nodata" wx:else>
+     <text wx:if="{{loadData}}">暂无动态记录</text>
+     <text wx:else>加载中...</text>
+</view>      
+</view>

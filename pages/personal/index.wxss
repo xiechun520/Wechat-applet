@@ -1,0 +1,309 @@
+/* pages/personal/index.wxss */
+.top {
+    height: 160px;
+    width: 100%;
+    background:#1DAE84;
+    position:relative;
+}
+
+.top-left {
+    color: #fff;
+    font-size: 28rpx;
+    padding-left: 50rpx;
+    padding-top: 110rpx;
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 22px;
+}
+
+.top-right {
+    color: #fff;
+    font-size: 28rpx;
+    padding-right: 50rpx;
+    padding-top: 110rpx;
+    float: right;
+    width: 20%;
+    text-align: center;
+    line-height: 22px;
+}
+
+.top-center {
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    padding-top: 60rpx;
+    float: left;
+    width: 46%;
+    line-height: 40px;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.touxiang {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.touxiang  image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+.line1 {
+    width: 100rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    margin: 0 auto;
+    border: 1px solid;
+    border-radius: 25rpx;
+    margin-top: 6rpx;
+}
+
+.order {
+    font-size: 30rpx;
+    float: left;
+    color: #262626;
+    margin-left: 20rpx;
+    margin-top: 14rpx;
+}
+
+.more {
+    font-size: 24rpx;
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 14rpx;
+    color: #262626;
+}
+
+.con01 {
+    width: 100%;
+    height: 274rpx;
+    margin-top: -10rpx;
+    background: #fff;
+    border-bottom: 5px solid #eaeaea;
+}
+
+.con01-1 {
+    height: 100rpx;
+    line-height: 90rpx;
+    width: 96%;
+    margin: 0 auto;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.con01-2 {
+    width: 94%;
+    height: 55%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.payment {
+    width: 20%;
+    float: left;
+    font-size: 26rpx;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.tupian {
+    width: 58rpx;
+    height: 58rpx;
+    margin: 0 auto;
+    margin-bottom: 30rpx;
+}
+.fontcolor{
+  color: #262626;
+  font-size: 28rpx;
+  margin-top: -16rpx;
+}
+.tupian01 {
+    margin-top: 14rpx;
+    width: 90%;
+    height: 90%;
+}
+
+.con02 {
+    height: 90rpx;
+    border-bottom: 1px solid #f8f8f8;
+    font-size: 30rpx;
+    background: #fff;
+    line-height: 90rpx;
+    width: 96%;
+    margin: 10rpx auto 0 auto;
+}
+
+.qiandao {
+    float: left;
+    width: 260rpx;
+    height: 90rpx;
+    margin-left: 20rpx;
+    color: #262626;
+}
+.wenzustyle{
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}
+
+.check {
+    font-size: 28rpx;
+    float: right;
+    color: #999;
+}
+
+.me-bg {
+    position: relative;
+    width: 100%;
+    height: 360rpx;
+    background: #ffffff;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.vcard_wrap {
+    margin: 30rpx 20rpx;
+    padding: 26rpx 20rpx;
+    border: 2rpx solid #d7d7d7;
+    background: #ffffff;
+}
+
+.vcard_up {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.vcard_up_l {
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #999999;
+    width: 75%;
+    position: relative;
+}
+
+.edit {
+    position: absolute;
+    right: 12rpx;
+    top: 10rpx;
+    background: #e51c23;
+    color: #ffffff;
+    padding: 6rpx 12rpx;
+}
+
+.share {
+    position: absolute;
+    right: 162rpx;
+    top: 10rpx;
+    background: #e51c23;
+    color: #ffffff;
+    padding: 7rpx 12rpx;
+    line-height: 1.5;
+    font-size: 28rpx;
+    border-radius: 0;
+}
+
+.vcard_up_r {
+    margin: 0 auto;
+    width: 25%;
+    text-align: right;
+}
+
+.name {
+    color: #222222;
+    font-size: 28rpx;
+    margin: 20rpx 0;
+    width: 130rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vcard_down {
+    font-size: 28rpx;
+    color: #666;
+    border-top: 2rpx solid #d7d7d7;
+    padding-top: 30rpx;
+    margin-top: 10rpx;
+}
+
+.topTips {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    background: #e51c23;
+    text-align: center;
+}
+
+.admin {
+    position: fixed;
+    left: 10rpx;
+    bottom: 160rpx;
+    width: 80rpx;
+    height: 80rpx;
+    background: #fff;
+    border-radius: 50%;
+}
+.admin  image {
+        width: 80rpx;
+        height: 80rpx;
+    }
+
+.user {
+    position: fixed;
+    left: 10rpx;
+    bottom: 260rpx;
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #F9320C;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.bg_img {
+    width: 100%;
+    position: relative;
+    left: 0;
+}
+
+.tupian06 {
+    width: 46rpx;
+    height: 46rpx;
+    transform: translateY(30%) translateX(-6px);
+}
+
+.tupian05 {
+    width: 30rpx;
+    height: 30rpx;
+    transform: translateY(30%) translateX(-6px);
+}
+
+.r6 {
+    right: 12rpx
+}
+
+.r68 {
+    right: 162rpx
+}
+.box{
+  width: 100%;
+  height: 30rpx;
+}

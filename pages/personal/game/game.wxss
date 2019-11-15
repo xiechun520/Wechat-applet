@@ -1,0 +1,617 @@
+/* pages/personal/game/game.wxss */
+page{
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+}
+.body{
+  height: 100%;
+  width: 100%;
+ /* background:url(http://www.haoshi360.com/fomo3d/monketbg.png) no-repeat;
+  background-size: 100% 100%;*/
+}
+.pettop{
+  position: fixed;
+  top:0;
+  right:0;
+  font-size:30rpx;
+  text-align: center;
+  color:#a05019;
+  background: #fbf4e2;
+  padding:10rpx 20rpx;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.header{
+  z-index:999;
+  position: absolute;
+}
+.coinarea{
+   width:240rpx;
+   height:64rpx;
+   line-height: 64rpx;
+   transform: translate(30px,20px);
+   border-radius: 64rpx;
+   border: 5rpx solid #e3cc8f;
+   background: #fbf4e2;
+}
+.coinarea image{
+   height: 54rpx;
+   width:54rpx;
+   border-radius: 50%;
+   float: left;
+}
+.dou{
+  width:30rpx;
+  height:30rpx;
+  background: url(http://www.vij365.com/fomo3d/zydou.png) no-repeat;
+  background-size:100%;
+  float:left;
+  margin:0 10rpx;
+  transform: translateY(5px);
+}
+.font{
+  font-size:26rpx;
+  float: left;
+  padding-left:12rpx;
+}
+.cloud_one_area{
+   width: 390rpx;
+   height:200rpx;
+   background: url(http://www.vij365.com/fomo3d/cloud1.png) no-repeat;
+   background-size: 100%;
+   position: absolute;
+   right:-160rpx;
+   top:120rpx;
+   z-index:777;
+   animation: cloud_one_area 100s linear infinite;
+}
+@keyframes cloud_one_area {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+ 
+  to {
+    transform: translate3d(-640rpx, 0, 0);
+  }
+}
+.cloud_two_area{
+  width: 220rpx;
+  height:160rpx;
+  background:url(http://www.vij365.com/fomo3d/cloud.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top:180rpx;
+  left:-30rpx;
+  z-index:777;
+  animation: cloud 100s linear infinite; 
+}
+@keyframes cloud {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+ 
+  to {
+    transform: translate3d(640rpx, 0, 0);
+  }
+}
+.sun_area{
+  width: 151rpx;
+  height: 151rpx;
+  border-radius: 50%;
+  background: url(http://www.vij365.com/fomo3d/sun.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left:120rpx;
+  top:130rpx;
+  z-index:776;
+  animation: sun 12s linear infinite; 
+}
+@keyframes sun {
+  0%{
+    transform: scale(1.0);
+  }
+  33.3%{
+    transform: scale(1.1);
+  }
+  66.6%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1.0);
+  }
+ 
+}
+/* .game{
+  width:80rpx;
+  height:95rpx;
+  background: url(http://www.haoshi360.com/fomo3d/game.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  right:40rpx;
+  top:80rpx;
+  z-index: 999;
+}
+.friend{
+  width:80rpx;
+  height:95rpx;
+  background: url(http://www.haoshi360.com/fomo3d/friend.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  right:40rpx;
+  top:200rpx;
+  z-index: 999;
+} */
+.paiming{
+  width:80rpx;
+  height:95rpx;
+  background: url(http://www.vij365.com/fomo3d/userrank.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+ /* right:40rpx;
+  top:320rpx;*/
+  right:40rpx;
+  top:200rpx;
+  z-index: 999;
+}
+.gogl{
+   width:80rpx;
+  height:95rpx;
+  background: url(http://www.vij365.com/fomo3d/gonglue.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  right:40rpx;
+  top:320rpx;
+  z-index: 999;
+}
+button{
+  border:none;
+  border-radius:0;
+}
+button::after{
+  border: none;
+  border-radius: 0;
+}
+.share{
+  width:80rpx;
+  height:95rpx;
+  /*background: url(http://www.haoshi360.com/fomo3d/shareicon.png) no-repeat;*/
+  background: url(http://www.vij365.com/fomo3d/zymall.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  /*right:40rpx;
+  top:440rpx;*/
+  right:40rpx;
+  top:80rpx;
+  z-index: 999;
+}
+.eattime{
+  width: 320rpx;
+ /* height:60rpx;
+  line-height: 60rpx;*/
+  border: 5rpx solid #e29852;
+  bottom:520rpx;
+  left:170rpx;
+  position: absolute;
+  border-radius: 60rpx;
+  font-size:30rpx;
+  text-align: center;
+  color:#a05019;
+  background: #fbf4e2;
+}
+.monket{
+  background: url(http://www.vij365.com/fomo3d/monkey.gif) no-repeat;
+  background-size:100% 100%;
+  width:250rpx;
+  height:280rpx;
+  position: absolute;
+  bottom:240rpx;
+  left:180rpx;
+  z-index:999;
+  animation: monket 3s steps(1) ;
+}
+@keyframes monket {
+  0%{
+    left:-120rpx;
+  }
+  20%{
+    left:-60rpx;
+  }
+  40%{
+    left:0;
+  }
+  60%{
+    left:60rpx;
+  }
+  80%{
+    left:120rpx;
+  }
+  100%{
+    left:180rpx;
+  }
+}
+.eatmonket{
+  background: url(http://www.vij365.com/fomo3d/eatmonket.gif) no-repeat;
+  background-size:100% 100%;
+  width:250rpx;
+  height:280rpx;
+  position: absolute;
+  bottom:240rpx;
+  left:180rpx;
+  z-index:999;
+}
+
+.wan{
+  position: absolute;
+  bottom:240rpx;
+  left:420rpx;
+  z-index:999;
+}
+.kong{
+  width:116rpx;
+  height:49rpx;
+  background: url(http://www.vij365.com/fomo3d/kongdou.png) no-repeat;
+  background-size:100% 100%;
+  z-index:999;
+}
+.man{
+  width: 116rpx;
+  height: 87rpx;
+  background: url(http://www.vij365.com/fomo3d/mandou.png) no-repeat;
+  background-size:100% 100%;
+  z-index:999;
+}
+.say{
+  background-size:100% 100%;
+  position: absolute;
+  bottom:340rpx;
+  left:400rpx;
+  font-size:30rpx;
+  color:#a05019;
+  background: #fff;
+  border: 5rpx solid #e29852;
+  padding:4rpx 20rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  animation: say 2.5s linear infinite; 
+}
+@keyframes say {
+   10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50%,100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes monket {
+  0%{
+    left:-120rpx;
+  }
+  20%{
+    left:-60rpx;
+  }
+  40%{
+    left:0;
+  }
+  60%{
+    left:60rpx;
+  }
+  80%{
+    left:120rpx;
+  }
+  100%{
+    left:180rpx;
+  }
+}
+.game{
+  width:110rpx;
+  height:130rpx;
+  background: url(http://www.vij365.com/fomo3d/newgame.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left:140rpx;
+  bottom:70rpx;
+  z-index: 999;
+}
+.friend{
+  width:110rpx;
+  height:130rpx;
+  background: url(http://www.vij365.com/fomo3d/newfriend.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left:280rpx;
+  bottom:70rpx;
+  z-index: 999;
+}
+.mall{
+  width:110rpx;
+  height:130rpx;
+  background: url(http://www.vij365.com/fomo3d/zymall.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left:425rpx;
+  bottom:65rpx;
+  z-index: 999;
+}
+.givefood{
+  width:110rpx;
+  height:110rpx;
+  background: url(http://www.vij365.com/fomo3d/newgivefood.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  right:40rpx;
+  bottom:80rpx;
+  z-index: 999;
+}
+.common_tree{
+  width:64rpx;
+  height:52rpx;
+  background: url(http://www.vij365.com/fomo3d/treedou.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  z-index: 999;
+}
+.one{
+  left:20rpx;
+  bottom:320rpx;
+  animation: one 5s linear infinite; 
+}
+@keyframes one {
+  0%{
+    transform: scale(1.15);
+  }
+  50%{
+    transform: scale(1.25);
+  }
+  100%{
+    transform: scale(1.0);
+  }
+}
+.jindoucount{
+  border: 2rpx solid #e29852;
+  bottom:380rpx;
+  left:34rpx;
+  position: absolute;
+  border-radius: 60rpx;
+  font-size:24rpx;
+  text-align: center;
+  color:#a05019;
+  background: #fbf4e2;
+  padding:2rpx 16rpx;
+  z-index:999;
+}
+.two{
+  left:10rpx;
+  bottom:400rpx;
+}
+.three{
+  left:4rpx;
+  bottom:200rpx;
+}
+.tishishoudao{
+   position: absolute;
+   bottom:440rpx;
+   left:40rpx;
+   font-size:24rpx;
+   background:rgba(0, 0, 0, 0.6);
+   padding:10rpx 20rpx;
+   color:#fff;
+   border-radius: 10rpx;
+}
+.foodcount{
+  font-size:30rpx;
+  transform: translateY(86rpx);
+  text-align: center;
+  color:#fff;
+  font-weight: bold;
+}
+.shougexiaoguo{
+  width:64rpx;
+  height:52rpx;
+  background: url(http://www.vij365.com/fomo3d/treedou.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  z-index: 999;
+  left:20rpx;
+  bottom:320rpx;
+  animation: shougexiaoguo 1s linear; 
+}
+@keyframes shougexiaoguo {
+  0%{
+     left:20rpx;
+     bottom:320rpx;
+  }
+  100%{
+    left:70rpx;
+    bottom:1100rpx;
+  }
+}
+.zhezhao{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  vertical-align: middle;
+  z-index:888;
+}
+.btn-area{
+   width:500rpx;
+   height:500rpx;
+   bottom:200rpx;
+   left:100rpx;
+   position: absolute;
+}
+.btn-image{
+    width:80rpx;
+    height:95rpx; 
+    position: absolute;
+}
+.gonglue{
+  background: url(http://www.vij365.com/fomo3d/gonglue.png) no-repeat;
+  background-size: 100%;
+  top:160rpx; 
+}
+.wenhou{
+  background: url(http://www.vij365.com/fomo3d/wenhou.png) no-repeat;
+  background-size: 100%;
+  top:50rpx;
+  left:120rpx; 
+}
+.xianmei{
+  background: url(http://www.vij365.com/fomo3d/xianmei.png) no-repeat;
+  background-size: 100%;
+  top:50rpx;
+  left:300rpx; 
+}
+.songqiubo{
+  background: url(http://www.vij365.com/fomo3d/songqiubo.png) no-repeat;
+  background-size: 100%;
+  top:160rpx;
+  left:400rpx; 
+}
+.showMessage{
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  transform: translateY(450rpx);
+}
+.showwarn{
+  padding:10rpx 40rpx;
+  border: 5rpx solid #e29852;
+  border-radius: 60rpx;
+  font-size:30rpx;
+  text-align: center;
+  color:#a05019;
+  background: #fbf4e2;
+}
+.tanchu{
+   min-height:480rpx;
+   width: 100%;
+   background: #fff;
+   position: fixed;
+   bottom:0;
+   z-index:1000;
+   border-top-right-radius: 20rpx;
+   border-top-left-radius: 20rpx;
+
+}
+.tanchu .shareImg{
+   width:100%;
+   height:400rpx;
+   background: url(http://www.vij365.com/fomo3d/tanchu.png) no-repeat;
+   background-size:100% 100%;
+   position: absolute;
+   bottom:0;
+   border-top:1px solid #f3f2f2;
+}
+.sharefont{
+   font-size:28rpx;
+   padding:10rpx 20rpx 10rpx 20rpx;
+   height:79rpx;
+   line-height: 79rpx;
+   letter-spacing: 4rpx;
+}
+.shareleft{
+   width: 50%;
+   float:left;
+}
+.shareright{
+   width: 50%;
+   float:right;
+   color:#17A5D6;
+   text-align: right;
+}
+.monketlogo{
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.center{
+  margin: 0 auto;
+  width: 105rpx;
+  height: 105rpx;
+  background: url(http://www.vij365.com/fomo3d/tk_monket.png) no-repeat;
+  background-size: 100%;
+  transform: translateY(-50rpx);
+}
+.closetk{
+  position:absolute;
+  top:-10rpx;
+  right:10rpx;
+  font-size:26rpx;
+  width:40rpx;
+  height:40rpx;
+  line-height:40rpx;
+  text-align:center;
+  border-radius:50%;
+  background:#ddd;
+  color:#fff;
+}
+
+
+/**临时代码**/
+
+.touyy{
+  background: url(http://www.vij365.com/fomo3d/touyy.png) no-repeat;
+  background-size:100% 100%;
+  width:250rpx;
+  height:280rpx;
+  position: absolute;
+  bottom:240rpx;
+  left:180rpx;
+  z-index:999;
+  animation: monket 3s steps(1) ;
+}
+.saodi{
+  background: url(http://www.vij365.com/fomo3d/saodi.png) no-repeat;
+  background-size:100% 100%;
+  width:250rpx;
+  height:280rpx;
+  position: absolute;
+  bottom:240rpx;
+  left:180rpx;
+  z-index:999;
+  animation: monket 3s steps(1) ;
+}
+.lyyxjl{
+  background: url(http://www.vij365.com/fomo3d/lyyxjl.png) no-repeat;
+  background-size:100% 100%;
+  width:250rpx;
+  height:280rpx;
+  position: absolute;
+  bottom:240rpx;
+  left:180rpx;
+  z-index:999;
+  animation: monket 3s steps(1) ;
+}
+.one-monket-bg{
+  background:url(http://www.vij365.com/fomo3d/monketbg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.two-saodi-bg{
+  background:url(http://www.vij365.com/fomo3d/saodibg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.three-touyy-bg{
+  background:url(http://www.vij365.com/fomo3d/touyybg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.four-lyyxjl-bg{
+  background:url(http://www.vij365.com/fomo3d/lanyabg.png) no-repeat;
+  background-size: 100% 100%;
+}

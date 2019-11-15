@@ -1,0 +1,16 @@
+<!--pages/personal/score/score.wxml-->
+<view class="body">
+    <view class="redeem">
+        <view class="redeem_shop" wx:for="{{redeemList}}" wx:key="redeemList">
+            <view class="redeem_shop_img">
+                <view style="position:absolute:top:10px;left:20px;background:rgba(0,0,0,0.5);color:#f16645;padding:10rpx 20rpx 6rpx 20rpx;font-size:24rpx;font-weight:bold">{{item.scoreCount}}积分兑换</view>
+                <image src="{{item.headImage}}"></image>
+            </view>
+            <view style="border-left: 1px solid #ccc;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;">
+                <view class="redeem_shop_txt">{{item.goodsName}}</view>
+                <view wx:if="{{userInfo.integral >= item.scoreCount}}" class="redeem_shop_btn" style="width:60%;font-size:30rpx;" bindtap="goDetail" data-goodid="{{item.goodsId}}">去兑换</view>
+                <view wx:else class="redeem_shop_btn" style="width:60%;font-size:30rpx;background:#d1d1d1">积分不足</view>
+            </view>
+        </view>
+    </view>
+</view>

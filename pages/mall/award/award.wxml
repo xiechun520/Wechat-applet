@@ -1,0 +1,61 @@
+<!--pages/mall/award/award.wxml-->
+<view class="container1">
+    <swiper class="head_bg" indicator-dots="false" autoplay="false" interval="5000" duration="1000">
+        <block wx:for="{{goodsImgs}}" wx:key="goodsImgs1" wx:for-index="index">
+            <swiper-item class="act-item1">
+                <view class="me-bg">
+                    <image class="goods-image" bindtap='lookPicture' data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="vcard_wrap">
+        <view class="vcard_up">
+            <view class="vcard_up_l">
+                <text class="goods-name">{{goodsInfo.goodsName}}</text>
+                <view class="goods-price">{{goodsInfo.scoreCount}}积分</view>
+            </view>
+        </view>
+        <view class="detail-title-wrapper">
+            <view class="detail-title">商品详情</view>
+        </view>
+        <view class="vcard_down">
+            <rich-text nodes="{{nodes}}"></rich-text>
+        </view>
+        <view class="detail-title-wrapper">
+            <view class="detail-title">购买记录</view>
+        </view>
+    </view>
+</view>
+<view class="bottom-wrapper">
+    <view class="buy-now"  data-stock="{{goodsInfo.goodsStock}}" data-type="1" catchtap="showSpecBox">
+        <text class="buy-text">立即兑换</text>
+    </view>
+</view>
+<view class="good_choose_layer" wx:if="{{showGoodsSpec==1}}" catchtap="hideBuy"></view>
+<view class="good_choose" wx:if="{{showGoodsSpec==1}}">
+    <view class="info">
+        <view class="left" wx:if="{{goodsImgs.length>0}}">
+            <image id="chooser_img" src="{{goodsImgs[0]}}"></image>
+        </view>
+        <view class="right">
+            <view class="name">{{goodsInfo.goodsName}}</view>
+            <view class="price">{{goodsPriceSpec}}积分</view>
+        </view>
+    </view>
+    <view wx:for="{{specTypeList}}" wx:key="specTypeList1" wx:for-item="spec" wx:for-index="specIndex" class="spec">
+        <view class="spec-name">{{spec.name}}</view>
+        <view class="spec-item-hull">
+            <view wx:for="{{spec.specSet}}" wx:key="specSet1" wx:for-index="itemIndex" class="spec-item {{chosenSpecList[specIndex]==itemIndex?'high-light':''}}" catchtap="chooseSpec" data-specIndex="{{specIndex}}" data-itemIndex="{{itemIndex}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="number">
+        <view class="count-title">数量</view>
+        <view class="count">
+            <view class="minus" bindtap="minusCount">-</view>
+            <view class="showNum">{{counts}}</view>
+            <view class="plus" bindtap="plusCount">+</view>
+        </view>
+    </view>
+    <view class="sub" bindtap="buyNow">立即兑换</view>
+</view>

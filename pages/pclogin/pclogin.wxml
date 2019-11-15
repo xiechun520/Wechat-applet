@@ -1,0 +1,8 @@
+<!--pages/pclogin/pclogin.wxml-->
+<view class="page-pclogin">
+    <image class="pclogin-image" mode="aspectFill" src="{{imgCommonUrl}}/vij/vijlogo.jpg"></image>
+    <view class="pclogin-comfirm">确定登录网站</view>
+    <view class="pclogin-comfirm">唯爱家吗</view>
+    <button class="weui-btn primary-btn" bindtap="login">确定</button>
+    <button class="weui-btn" type="default">取消</button>
+</view>

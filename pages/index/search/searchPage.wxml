@@ -1,0 +1,33 @@
+<!--vijpro/pages/index/search/searchPage.wxml-->
+<!-- 头部结束 ，搜索开始-->
+  <view class="sousuo"  id="search">
+      <view class="sousuo-image"></view>
+      <view class='sousuo-text'>
+          <input type="search" placeholder="输入你想要的商品" value="{{inputVal}}" focus="{{inputShowed}}" class="input-gk" bindinput="searchData" bindtop="searchLogShowed" auto-focus='showSearchFocus' bindconfirm="search"></input>    
+      </view>
+
+      <view class="sousuo-search" bindtap="search" data-variable="{{searchData}}"><icon class="icon-weizhi" type="search" size="14"></icon></view>
+
+  </view> 
+  <view class="search-ym">
+      <view class="ts-search" wx:for="{{searchGoodslist}}" wx:for-index="index" wx:key="list" wx:for-item="items" >
+          
+          <view class="li" data-item="{{items}}" bindtap="goDetailFromSearch">{{items.goodsName}}</view>
+      </view>
+      <view class="rm-search">
+          <view><text>热门搜索：</text></view>
+          <view class="juli-top">
+                <view  class="text-color" wx:for="{{getHotSearchGoods}}" wx:for-item="items" wx:for-index="index" wx:key="list">
+                  <button type="button" class="text" bindtap="search" data-variable="{{items.typeName}}">{{items.typeName}}</button>
+                </view>
+          </view>
+      </view>
+      <view class="rm-search">
+          <text>历史搜索：</text>
+          <view class="juli-top">
+                <view  class="text-color" wx:for="{{historySeaData}}" wx:for-item="items" wx:for-index="index" wx:key="list">
+                  <button type="button" class="text" bindtap="search" data-variable="{{items}}">{{items}}</button>
+                </view>
+          </view>
+      </view> 
+  </view>

@@ -1,0 +1,141 @@
+/* pages/personal/order/order.wxss */
+view {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.weui-navbar {
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.weui-navbar__item {
+    padding: 0;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+    color: #1DAE84;
+    border-bottom: 2px solid #1DAE84;
+}
+
+.contain {
+    padding: 100rpx 0;
+}
+
+.order-item {
+    width: 100%;
+    padding: 0 30rpx;
+    border-bottom: 2rpx solid #f1f1f1;
+}
+
+.order-title {
+    width: 100%;
+    padding: 12rpx 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-id {
+    font-size: 24rpx;
+    color: #777;
+}
+
+.order-stutas {
+    font-size: 24rpx;
+    color: #1DAE84;
+}
+
+.order-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.order-iamge {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.order-content-middle {
+    width: 400rpx;
+    height: 180rpx;
+  
+}
+
+.order-name {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.order-spec {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.order-content-right {
+    padding: 10rpx 0;
+    height: 200rpx;
+}
+
+.order-content-right .order-price,
+.order-content-right .order-number {
+    text-align: right;
+    font-size: 30rpx;
+    color: #CB0F0E;
+}
+
+.order-counts {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.order-counts text {
+    font-size: 22rpx;
+    color: #777;
+    padding: 10rpx;
+}
+
+.action-box {
+    padding: 26rpx 10rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+button {
+    margin: 0;
+    margin-left: 26rpx;
+    color: #FFF;
+    font-size: 28rpx;
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 0;
+}
+
+.primary-button {
+    background: #1DAE84;
+}
+
+.danger-button {
+    background: #CB0F0E;
+}
+
+.tips {
+    font-size: 28rpx;
+    padding: 10rpx;
+    color: #999;
+    text-align: center;
+}

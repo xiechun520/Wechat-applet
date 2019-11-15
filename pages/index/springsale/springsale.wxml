@@ -1,0 +1,25 @@
+<!--pages/index/springsale/springsale.wxml-->
+ <view class="hotscalebox">
+    <view wx:if="goodsList.length > 0" class="imgrank">
+       <view bindtap="goGoodsDetail" data-goodid="{{goods.goodsId}}" wx:for="{{seckillList}}" wx:for-item="goods" wx:for-index="index" wx:key="*seckillList" class="waresback">
+       
+         <view class="hslowbox ">
+           <image class="img-style" src="{{goods.goodRecommendPic?goods.goodRecommendPic:goods.headImage}}"mode="widthFix"></image> 
+            <view class="textstyle slhao"> <text>{{goods.goodsName}}</text></view>
+                <view class="text1">
+                      <text class="fontsize">￥{{goods.sellPrice}}元</text>
+                      <text class="textgoods">购买</text>
+                </view>
+                <view class="progressstyle">
+                    <view class="progress-shu"><progress percent="{{(goods.selledCount/goods.isSppNum)*100}}" color="#f80505" style='border-radius:10rpx;overflow:hidden;'/>
+                    </view>
+                    <view class="proliang">
+                         <text class="wenzidx">{{goods.selledCount}}/{{goods.isSppNum}}件</text>
+                    </view>
+               </view>
+        </view>
+      </view>
+      <view class ='bottom_box'></view>
+    </view>
+    
+ </view>

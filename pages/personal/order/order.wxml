@@ -1,0 +1,57 @@
+<!--pages/personal/order/order.wxml-->
+<view class="container">
+<view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="tabslist">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'border-bottom-common-color font-common-color' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+      </view>
+
+      <view class="contain">
+        <view class="order-item" wx:for="{{orderList}}" wx:for-item="order" wx:for-index="itemKey" wx:key="neworderList">
+            <view class="order-title">
+                <view class="order-id">订单号：{{order.orderID}}</view>
+                <view class="order-stutas">{{order.orderStatusString?order.orderStatusString:"交易中"}}</view>
+            </view>
+            <view class="order-content" wx:for="{{order.objects}}"  wx:key="objects" wx:for-index="index" wx:for-item="goods" bindtap="goodsOrderDetail" data-order="{{order}}" data-orderid="{{order.orderId}}">
+                <view class="order-content-left" catchtap = "godetal" data-spid = "{{goods.goodsId}}">
+                    <image wx:if="{{goods.goodsImage}}" class="order-iamge" mode="aspectFill" src="{{goods.goodsImage}}"></image>
+                    <image wx:else class="order-iamge" mode="aspectFill" src="{{imgCommonUrl}}/xcximages/shartaskBackground.png"></image>
+                </view>
+                <view class="order-content-middle">
+                    <view class="order-name">{{goods.goodsName}}</view>
+                    <view class="order-spec">商品规格：{{goods.specTypeString?goods.specTypeString:"无"}}</view>
+                </view>
+                <view class="order-content-right">
+                    <view class="order-price">￥{{goods.sellPrice}}</view>
+                    <view class="order-number">×{{goods.buyNumber}}</view>
+                </view>
+            </view>
+            <view class="order-counts">
+                <text> 共{{order.totalBuyNumber}}件商品 </text>        
+                <text> 运费￥0.00 </text>        
+                <text> 总计￥{{order.totalPrice}} </text>        
+            </view>
+            <!-- <view class="action-box" wx:if="{{order.orderStatus == 14}}">
+                <button class="action primary-button" hover-class="button-hover">评价商品</button>
+            </view>             -->
+            <view class="action-box" wx:if="{{order.orderStatus == 10}}">
+                <button class="action primary-button back-commmon-color" bindtap="confirmReceipt" hover-class="button-hover" data-orderid="{{order.orderID}}">确认收货</button>
+            </view>
+            <view class="action-box" wx:if="{{order.orderStatus == 5}}">
+                    <navigator class="action primary-button back-commmon-color" url="/pages/personal/order/logistics/logistics" class="payment">
+                        <view>查看物流</view>
+                    </navigator>
+            </view>
+            <view class="action-box" wx:if="{{order.orderStatus == -1}}">
+                <button class="action primary-button back-commmon-color" bindtap="deleteOrder" data-orderid="{{order.orderID}}"hover-class="button-hover">删除订单</button>
+            </view>
+            <view class="action-box" wx:if="{{order.orderStatus == 3}}">
+                <button class="action danger-button back-commmon-color" bindtap="quitOrder"  data-orderid="{{order.orderID}}" hover-class="button-hover">取消订单</button>                
+                <button class="action primary-button back-commmon-color" bindtap="goPay" data-orderid="{{order.orderID}}"  hover-class="button-hover">继续支付</button>
+            </view>
+        </view>
+        <view class="tips" wx:if="{{ orderList.length==0 }}">您暂时没有{{statusString}}的订单哦</view>
+        </view>
+</view>

@@ -1,0 +1,102 @@
+/* pages/personal/edit/edit.wxss */
+view {
+	box-sizing: border-box;
+}
+
+page {
+	background: #FFF;
+}
+
+.page-edit {
+	padding: 0 30rpx;
+}
+
+.edit-avator {
+	display: flex;
+	padding: 40rpx 0;
+	border-bottom: 1px solid #EEE;
+
+	justify-content: center;
+}
+
+.edit-avator image {
+	width: 180rpx;
+	height: 180rpx;
+	border-radius: 50%;
+}
+
+.edit-item {
+	display: flex;
+	padding: 25rpx 0;
+	border-bottom: 1px solid #EEE;
+
+	align-items: center;
+	justify-content: space-between;
+}
+
+.edit-item-left, .edit-item-right {
+	font-size: 28rpx;
+	line-height: 1;
+	color: #222;
+}
+
+.edit-item-right {
+	display: flex;
+
+	justify-content: flex-end;
+}
+
+.edit-item-right image {
+	width: 28rpx;
+	height: 28rpx;
+	margin-left: 30rpx;
+}
+
+.edit-box {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.edit-box-input {
+	font-size: 28rpx;
+	width: 700rpx;
+	margin-top: 40rpx;
+	padding: 20rpx 0;
+	color: #222;
+	border-bottom: 1px solid #EEE;
+}
+
+.button-box {
+	display: flex;
+	width: 600rpx;
+	height: 80rpx;
+	margin-top: 40rpx;
+
+	justify-content: space-between;
+}
+
+.edit-box-button {
+	font-size: 28rpx;
+	line-height: 80rpx;
+	width: 240rpx;
+	height: 100%;
+	text-align: center;
+	color: #222;
+	border: 0;
+	border-radius: 0;
+	background: #CDCACA;
+}
+.bg{
+    background: #41A18D;
+    color:#fff;
+}

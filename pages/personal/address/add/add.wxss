@@ -1,0 +1,81 @@
+/* pages/personal/address/add/add.wxss */
+page {
+    height: 100%;
+}
+
+.weui-cells {
+    margin-top: 0;
+}
+
+.weui-label, .weui-cell__bd {
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.weui-input, .weui-picker {
+    font-size: 28rpx;
+    color: #666;
+    line-height: 40rpx;
+    height: auto;
+    min-height: 0;    
+}
+
+.weui-textarea {
+    font-size: 28rpx;
+    color: #666;
+    height: 34rpx;
+}
+
+.wx-switch-input{width:80rpx !important;height:40rpx !important; } /*开关*/
+.wx-switch-input::before{width:80rpx !important;height: 40rpx !important; background: #f2f2f2 !important;}
+.wx-switch-input::after{width: 40rpx !important;height: 36rpx !important;}/*中间小圆球*/
+
+.body {
+    background: #f8f8f8;
+    height: 100%;
+}
+
+.weui-cells:after {
+    border-bottom: 0;
+}
+
+.delete_address {
+    width: 100%;
+    background: #fff;
+    color: #F76260;
+    font-size: 28rpx;
+}
+
+.tips {
+    margin-top: 10rpx;
+    color: #F76260;
+    font-size: 28rpx;
+    padding: 20rpx 30rpx;
+}
+
+.confirm_view {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    color: #FFFFFF;
+    background: #1DAE84;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+width:80rpx !important;
+height:45rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+width:78rpx !important;
+height: 45rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+width: 40rpx !important;
+height: 40rpx !important;
+}

@@ -1,0 +1,114 @@
+<!--pages/mall/detail/detail.wxml-->
+<view class="container1">
+    <view class="share" bindtap='goShare'></view>
+    <swiper class="head_bg" indicator-dots="false">
+        <block wx:for="{{goodsImgs}}" wx:key="goodsImgs" wx:for-index="index">
+            <swiper-item class="act-item1">
+                <view class="me-bg">
+                    <image class="goods-image" bindtap='lookPicture' data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="vcard_wrap">
+        <view class="vcard_up">
+            <view class="vcard_up_l">
+                <text class="goods-name">{{goodsInfo.goodsName}}</text>
+                <view class="goods-price">￥{{goodsInfo.sellPrice}}元</view>
+            </view>
+            <view class="sec-kill" wx:if="{{goodsInfo.isDtbt==1}}">
+                <text wx:if="{{seckillStatus==-1}}">距离秒杀开始：{{countDown}}</text>
+                <text wx:if="{{seckillStatus==1}}">距离秒杀结束：{{countDown}}</text>
+                <text wx:if="{{seckillStatus==101}}">秒杀已结束</text>
+            </view>
+        </view>
+        <view class="detail-title-wrapper">
+            <view class="detail-title">图文详情</view>
+        </view>
+        <view class="vcard_down">
+            <rich-text nodes="{{nodes}}"></rich-text>
+        </view>
+        <view class="detail-title-wrapper">
+            <view class="detail-title">购买记录</view>
+        </view>
+        <view class="orderListWrap">
+            <block class="orderList" wx:for="{{orderList}}" wx:for-index="itemKey" wx:key="orderList" wx:for-item="item">
+                <view class="orderListItem">
+                    <image src="{{item.head_image}}" mode="scaleToFill" />
+                    <view class="orderListItemContent"> {{item.nick_name}} {{item.create_time}} 购买了<span style="color:red;">{{item.buyNumber}}</span>件。 </view>
+                </view>
+            </block>
+            <view class="noMore">{{dataSetting.orderList?dataSetting.orderList:"暂无购买记录"}}</view>
+        </view>
+    </view>
+</view>
+<view class="bottom-wrapper">
+    <view class="tabbar-cart" catchtap="goCart">
+        <image src="/images/3_03.png" />
+        <text>购物车</text>
+    </view>
+    <view class="tabbar-collage" catchtap="collectGoods">
+        <image wx:if="{{isLike==0}}" src="/ordericon/111_03.png" />
+        <image wx:else src="/ordericon/44_03.png" />
+        <text>收藏</text>
+    </view>
+    <view class="join-cart" data-stock="{{goodsInfo.goodsStock}}" data-type="2" catchtap="showSpecBox">
+        <text class="buy-text">加入购物车</text>
+    </view>
+    <view class="buy-now"  data-stock="{{goodsInfo.goodsStock}}" data-type="1" catchtap="showSpecBox">
+        <text class="buy-text">立即购买</text>
+    </view>
+</view>
+<view class="good_choose_layer" wx:if="{{showGoodsSpec==1}}" catchtap="hideBuy"></view>
+<view class="good_choose" wx:if="{{showGoodsSpec==1}}">
+    <view class="info">
+        <view class="left" wx:if="{{goodsImgs.length>0}}">
+            <image id="chooser_img" src="{{goodsImgs[0]}}"></image>
+        </view>
+        <view class="right">
+            <view class="name">{{goodsInfo.goodsName}}</view>
+            <view class="price">￥{{goodsPriceSpec}}</view>
+        </view>
+    </view>
+    <view class="gsbox">
+        <view wx:for="{{goodsInfo.spectypeList}}" wx:key="specTypeList" wx:for-item="spec" wx:for-index="specIndex" class="spec">
+        <view class="spec-name">{{spec.name}}</view>
+        <view class="spec-item-hull">
+            <view wx:for="{{spec.specSet}}" wx:key="specSet" wx:for-index="itemIndex" class="spec-item {{chosenSpecList[specIndex]==itemIndex?'high-light':''}} " catchtap="chooseSpec" data-specIndex="{{specIndex}}" data-itemIndex="{{itemIndex}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="number">
+        <view class="count-title">数量</view>
+        <view class="count">
+            <view class="minus" bindtap="minusCount">-</view>
+            <view class="showNum">{{counts}}</view>
+            <view class="plus" bindtap="plusCount">+</view>
+        </view>
+    </view>
+    </view>
+
+    <view wx:if="{{specBoxType==1}}" class="sub" bindtap="buyNow">立即购买</view>
+    <view wx:if="{{specBoxType==2}}" class="sub" bindtap="joinCart" style="background: #FF9A26">加入购物车</view>
+</view>
+
+<!--弹出分享开始-->
+    <view class="zhezhao" hidden="{{showAction}}" bindtap="closeModal">
+    </view>
+    <view class="action-area" hidden="{{showAction}}">
+        <view class="action-btn-area">
+            <view class="action-btn">
+                <button open-type="share" plain="true">
+                    <image src='/ordericon/222_03.png'></image>
+                    <view class="weixin">微信好友</view>
+                </button>
+            </view>
+            <view class="action-btn">
+                <button bindtap="gotoHB" plain="true">
+                    <image src='/ordericon/333_03.png'></image>
+                    <view class="weixin">朋友圈</view>
+                </button>
+            </view>
+        </view>
+        <view class="quit" bindtap="closeModal">取消</view>
+    </view>
+    <!--弹出分享结束-->

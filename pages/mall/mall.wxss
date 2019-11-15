@@ -1,0 +1,252 @@
+/* pages/mall/mall.wxss */
+view {
+	box-sizing: border-box;
+}
+
+.search-hull {
+	line-height: 100rpx;
+	position: fixed;
+	z-index: 2;
+	top: 0px;
+	width: 100%;
+	height: 100rpx;
+	background: #FFF;
+}
+
+.search {
+	font-size: 28rpx;
+	line-height: 80rpx;
+	position: relative;
+	float: left;
+	width: 96%;
+	height: 60rpx;
+  display:flex;
+  flex-direction: row;
+	margin-top: 16rpx;
+	margin-left: 2%;
+	/* color: #000; */
+	border-radius: 40rpx;
+	background: #f6f6f6;
+}
+
+.weui-icon-search {
+	font-size: inherit;
+	float: left;
+	margin-right: 20rpx;
+  margin-top: -1rpx;
+}
+
+.weui-search-bar__input {
+	font-size: 28rpx;
+	line-height: 30px;
+	height: 60rpx;
+  width:600rpx;
+  color: #666;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button::after{ 
+  border: none; 
+  } 
+  
+
+.search_text {
+	font-size: 28rpx;
+	line-height: 72rpx;
+	float: right;
+	width: 17%;
+	height: 72rpx;
+	margin-top: 16rpx;
+	transform: translateX(-6px);
+	text-align: center;
+	color: #FFF;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background: #41A18D;
+}
+
+.clear-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 80rpx;
+	border: 0;
+  /* background: #FBFBFB; */
+}
+
+.clear-icon {
+	position: absolute;
+	z-index: 3;
+	top: 12rpx;
+	right: 16rpx;
+}
+
+.type-list {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	width: 170rpx;
+	height: 100%;
+	padding-top: 100rpx;
+	text-align: center;
+	background: #fff;
+}
+
+.type-item {
+	font-size: 28rpx;
+	line-height: 85rpx;
+	overflow: hidden;
+	height: 85rpx;
+	padding: 2rpx 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #3B3B3B;
+}
+
+.type-item.active {
+	transform: scale(1.1);
+	color: #41A18D;
+	border-bottom: 2rpx solid #FFF;
+	background: #FBFBFB;
+}
+
+.goods-content {
+  width:580rpx;
+	margin: 100rpx 0rpx 0rpx 170rpx;
+	background: #f1f1f1;
+  height: 100vh;
+  float:left;
+}
+
+.goods-list {
+  position: relative;
+  padding-left:10rpx;
+  /* padding-top:70rpx; */
+  background: #f1f1f1;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	color: #fff;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  padding-bottom: 50rpx;
+}
+.goods-lb{
+  width: 48.5%;
+}
+.type-title {
+  position:fixed;
+  height: 85rpx;
+  width:100%;
+  z-index: 999;
+  background: #f6f6f6;
+  margin-left:15rpx;
+	font-size: 30rpx;
+	color: #666;
+  /* display: flex;
+  justify-content: right;
+  align-items: center; */
+  line-height:85rpx;
+}
+.goods-l{
+  width: 50%;
+  padding: 10rpx 10rpx 0rpx 0rpx;
+}
+.goods-item {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+  height: auto;
+	border: 1px solid #FBFBFB;
+	background: #fff;
+}
+
+.goods-image {
+	width: 100%;
+}
+
+.goods-name {
+	font-size: 30rpx;
+	line-height: 40rpx;
+	display: table-cell;
+	overflow: hidden;
+  letter-spacing:3rpx;   
+	width: 250rpx;
+	height: 75rpx;
+	/* margin-top: 10rpx;
+  margin-left: 16rpx; */
+	padding: 10rpx;
+	text-align: left;
+	text-overflow: ellipsis;
+	color: #4C4C4C;                      
+}
+.wenzi{
+   display: -webkit-box;
+   word-break: break-all;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp:2;
+   font-size: 26rpx;
+
+}
+
+.goods-price {
+  width: 100%;
+	font-size: 30rpx;
+	text-align: left;
+  padding: 0rpx 10rpx 10rpx 10rpx;
+	color: #EB3A30;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  align-items: center;
+
+}
+
+
+.good-pay{
+  font-size:26rpx;
+  border:2rpx solid #f80505;
+  border-radius:20rpx;
+  color:#f80505;
+  padding: 0rpx 10rpx;
+  line-height: 18px;
+  height: 18px;
+
+}
+
+.show_search {
+	position: fixed;
+	z-index: 99;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: top 0.4s;
+	transition: top 0.4s;
+	background: #FFF;
+}
+
+.show_search .li {
+	font-size: 24rpx;
+	overflow: hidden;
+	width: 94%;
+	padding: 0 3%;
+	padding-top: 20rpx;
+	padding-bottom: 20rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.nodata {
+	font-size: 30rpx;
+	transform: translateY(200rpx);
+	text-align: center;
+	color: #999;
+}

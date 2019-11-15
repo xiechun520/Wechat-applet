@@ -1,0 +1,6 @@
+<!--pages/mall/poster/poster.wxml-->
+<view class="body">
+   <canvas canvas-id="shareGoodImage" style="width:{{windowWidth}}px;height:{{windowHeight}}px;box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.05);margin:40rpx auto 40rpx auto;"></canvas>
+   <!-- 按钮 -->
+<button bindtap='saveImg' type="primary">保存商品海报</button>
+</view>

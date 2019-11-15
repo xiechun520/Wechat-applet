@@ -1,0 +1,163 @@
+<view class="back-ground">
+    <view class="back">
+      <view class="logo">
+        <image class='logo-image' src="/images/tblogo.png" mode="aspectFit"></image>
+        <view class="text-font  cc-dd"><text>专注品质家居</text></view>
+      </view>
+      <view class="search">
+        <view class="sousuo-image"></view>
+            <view class='sousuo-text'>
+                <button class="input-gk" bindtap="showSearchPage">输入你想要的商品</button>    
+            </view>
+            <view class="sousuo-search"><icon class="icon-weizhi" type="search" size="14"></icon></view>
+      </view>
+      <view class="lunbo">
+            <swiper class="head_bg" indicator-dots="false" autoplay="false" interval="5000" 
+             duration="1000" indicator-color="#ffffff"               indicator-active-color="#41A18D">
+                <block wx:for="{{lunboList}}" wx:for-index="index" wx:key="lunbo1">
+                  <navigator url="{{item.hrefUrl}}" hover-class="navigator-hover">
+                    <swiper-item class="act-item1">
+                        <view class="swiper-image-hull">
+                            <image class="swiper-image" src="{{item.pictureUrl}}" mode="aspectFill" />
+                        </view>
+                    </swiper-item>
+                  </navigator>
+                </block>
+            </swiper>  
+      </view>
+  </view>
+  <view class="foot-wres">
+      <view class="banner">
+        <swiper class="head_bg" autoplay="false" interval="5000" duration="1000"  vertical="true" >
+                <block wx:for="{{lunboListBaner}}" wx:for-index="index" wx:key="lunbo1">
+                  <navigator url="{{item.advJumpUrl}}" hover-class="navigator-hover">
+                    <swiper-item class="act-item1">
+                        <view class="swiper-image-hull">
+                            <image class="swiper-image" src="{{item.advUrl}}" mode="aspectFill" />
+                        </view>
+                    </swiper-item>
+                  </navigator>
+                </block>
+            </swiper>
+      </view>
+  
+  <view class="rexiao">
+    <view class="max-text">限时特惠<text class="Springsalebox">Springsale</text><text class="textstyle" bindtap="goSpringsale">查看更多</text></view>
+  </view>
+  <view class="rexiao-wares">
+    <view wx:if="goodsList.length > 0" class="img-rank">
+        <view bindtap="goGoodsDetail" data-goodid="{{goods.goodsId}}" wx:for="{{seckillList}}" wx:for-item="goods" wx:for-index="index" wx:key="*seckillList" class="wares-back">
+            <view class="goods-img">
+                <image class="wares-img" src="{{goods.goodRecommendPic?goods.goodRecommendPic:goods.headImage}}"mode="widthFix"></image>
+            </view>
+            <view class="wd-text">
+                <view class="text-xiangqi last_height">
+                  <text class="line-hieght2">{{goods.goodsName}}</text>
+                  <!-- <text>{{textName}}</text>  -->
+                </view>
+                <view class="wd-text3">
+                  <text class="font-size-20">￥{{goods.sellPrice}}元</text>
+                  <text class="text-goods">购买</text>
+                </view>
+                <view class="progress">
+                  <view class="pro-shu">
+                    <progress percent="{{(goods.selledCount/goods.isSppNum)*100}}" color="#f80505" style='border-radius:10rpx;overflow:hidden;'/>
+                  </view>
+                  <view class="pro-liang">
+                    {{goods.selledCount}}/{{goods.isSppNum?goods.isSppNum:0}}件
+                  </view>
+                </view>
+               
+            </view> 
+        </view>
+    </view>
+  </view>
+  <view class="rexiao-tui">
+     <view class="img-max">
+        <image src="../../images/img.png" class="img-min"></image>
+     </view>
+    <view class="max-text min-text"><text class="lenglishstyle">On Sale</text>热销推荐</view>
+  </view>
+  <view class="rexiao-wares">
+    <view wx:if="goodsList.length > 0" class="img-rank">
+            <view bindtap="goGoodsDetail" data-goodid="{{goods.goodsId}}"  wx:for="{{goodsList1}}" wx:for-item="goods" wx:for-index="index" wx:key="*goodsList" class="wares-back">
+              <view>
+                  <image class="wares-img"  src="{{goods.goodRecommendPic?goods.goodRecommendPic:goods.headImage}}" mode="widthFix"></image>
+              </view>
+              <view class="wd-text">
+                  <view class="text-xiangqi last_height">
+                        <text>{{goods.goodsName}}</text>
+                  </view>
+                  <view class="wd-text3">
+                      <text class="font-size-20">￥{{goods.sellPrice}}元</text>
+                      <text class="text-goods">购买</text>
+                  </view>
+                  <view class="kongbai"></view>
+              </view>
+            </view>
+    </view>
+  </view>
+  <view class="container">
+    <text bindtap="goPageMall">查看全部商品 ></text>
+</view>
+  <view class="rexiao">
+    <view class="max-text">合作商家</view>
+  </view>
+  <view class="footer">
+    <view class="shnagjiabox"><image class="dibu-logo" src="../../images/a.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/c.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/d.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/e.png"></image></view>
+    <view class="shnagjiabox"><image class="dibu-logo" src="../../images/f.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/g.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/h.png"></image></view>
+    <view class="shnagjiabox1"><image class="dibu-logo" src="../../images/l.png"></image></view>
+  </view>
+</view>
+</view>
+<!--弹出授权弹框开始-->
+<view class="zhezhao" wx:if='{{!shouquan}}'>
+    <view class="sq-area">
+        <view class="sq-name">登陆并授权</view>
+        <view class="sq-one-font">申请获取以下权限</view>
+        <view class="sq-one-font">获得你的公开信息(昵称，头像)</view>
+        <view class="sq-btn">
+            <form class="shuru-area" report-submit bindsubmit="onGotUserInfo">
+                <button open-type="getUserInfo" lang="zh_CN" formType="submit">允许</button>
+            </form>
+        </view>
+    </view>
+</view>
+<!--弹出授权弹框结束-->
+<!--弹出送积分弹框-->
+<view class="zhezhao" hidden='{{isShow}}'>
+    <view><icon type='cancel' class='cancel' bindtap='cancel' ></icon></view>
+    <view class="welcome">    
+        <view class="model">
+            <view class="modelImg">               
+                <image src="/ordericon/444_03.png"></image>
+                <view style="font-size:32rpx;transform:translateY(-20%)">
+                    <view style="letter-spacing:1rpx;">恭喜您</view>
+                    <view style="padding:10rpx 0 40rpx 0;color:#41A18D">每天登陆奖励{{loginScore}}积分</view>
+                    <view style="width:80%;background:#00b181;padding:10rpx 0;margin:0 auto;color:#fff;border-radius:40rpx;letter-spacing:1rpx;" bindtap="closeScoreModal">领取</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--弹出送积分弹框-->
+<view class="zhezhao" wx:if='{{showCodePopup}}'>
+    <view class="welcome">
+        <view class="model">
+            <view class="modelImg">
+                <image src="/ordericon/444_03.png"></image>
+                <view style="font-size:32rpx;transform:translateY(-20%)">
+                    <view style="letter-spacing:1rpx;">恭喜您</view>
+                    <view style="padding:10rpx 0 40rpx 0;color:#41A18D">扫码获得{{qrcodeScore}}积分</view>
+                    <view style="width:80%;background:#41A18D;padding:10rpx 0;margin:0 auto;color:#fff;border-radius:8rpx;letter-spacing:1rpx;" bindtap="closeCodePopup">领取</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

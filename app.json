@@ -1,0 +1,78 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mall/counter/counter",
+    "pages/mall/detail/detail",
+    "pages/mall/mall",
+    "pages/descovery/detail/detail",
+    "pages/descovery/index",
+    "pages/personal/address/add/add",
+    "pages/personal/address/address",
+    "pages/personal/collect/collect",
+    "pages/personal/edit/edit",
+    "pages/personal/index",
+    "pages/personal/invite/invite",
+    "pages/personal/message/message",
+    "pages/personal/order/detail/detail",
+    "pages/personal/order/order",
+    "pages/shopcar/index",
+    "pages/personal/score/score",
+    "pages/personal/game/game",
+    "pages/mall/award/award",
+    "pages/mall/poster/poster",
+    "pages/personal/rank/rank",
+    "pages/pclogin/pclogin",
+    "pages/personal/ticket/ticket",
+    "pages/cardticket/cardticket",
+    "pages/index/search/searchPage",
+    "pages/index/searchcom/searchcom",
+    "pages/index/springsale/springsale"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1DAE84",
+    "navigationBarTitleText": "唯爱家商城",
+    "backgroundColor": "#fff",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle":"black",
+    "backgroundColor":"#fff",
+    "color": "#999999",
+    "selectedColor": "#41A18D",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/4_03.png",
+        "selectedIconPath": "./images/8_03.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "分类",
+        "iconPath": "./images/1_03.png",
+        "selectedIconPath": "./images/5_03.png"
+      },
+      {
+        "pagePath": "pages/shopcar/index",
+        "text": "购物车",
+        "iconPath": "./images/3_03.png",
+        "selectedIconPath": "./images/6_03.png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "./images/2_03.png",
+        "selectedIconPath": "./images/7_03.png"
+      }
+      
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap94.json"
+}

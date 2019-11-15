@@ -1,0 +1,23 @@
+<!--pages/personal/address/address.wxml-->
+<view class="body">
+    <view class="searchbar-result flex-wrap">
+        <block wx:for="{{addressList}}" wx:for-index="itemKey" wx:key="*this" wx:for-item="addressInfo">
+            <view class="address-item" bindtap="editAddress" data-index="{{itemKey}}">
+                <!-- <view class="item-first back-commmon-color">{{addressInfo.firstString}}</view> -->
+                <view class="item-middle">
+                    <view class="item-person">
+                        <text class="item-name">{{addressInfo.deliveryName}}</text>
+                        <text class="item-phone">{{addressInfo.deliveryPhone}}</text>
+                    </view>
+                    <view class="item-address last">
+                        <text wx:if="{{addressInfo.isDefault==1}}" style="background: #bdddd8; color: #41A18D;margin-right: 6rpx;">默认</text>
+                        <text>{{addressInfo.province+" "}}{{addressInfo.city+" "}}{{addressInfo.area+" "}}{{addressInfo.shoppingAddress}}</text>        
+                    </view>
+                </view>
+                <view class="item-choose back-commmon-color" data-info="{{addressInfo}}" catchtap="chooseAddress">选择</view>
+            </view>
+        </block>
+    </view>
+    <view class="tips" wx:if="{{addressList.length == 0}}">您还没有设置收货地址哦</view>
+    <button class="add-new" bindtap="newAddr">+ 新增收货地址</button>
+</view>

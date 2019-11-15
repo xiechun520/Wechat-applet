@@ -1,0 +1,39 @@
+<!--pages/mall/index.wxml-->
+<view class="page-mall">
+    <view class="search-hull">
+        <view class="search">
+            
+            <button class="weui-search-bar__input" bindtap="showSearchPage">搜索商品</button>
+            <icon class="weui-icon-search" type="search" size="18"></icon>
+        </view>
+    </view>
+    
+    <view class="type-list">
+        <view class="type-item {{curNav == 0? 'active-common-color' : ''}}" data-index="{{index}}" data-id="0" bindtap="switchRightTab">推荐</view>
+        <view class="type-item {{curNav == 1? 'active-common-color' : ''}}" data-index="{{index}}" data-id="1" bindtap="switchRightTab">热销</view>
+        <!-- <view class="type-item {{curNav == 2? 'active-common-color' : ''}}" data-index="{{index}}" data-id="2" bindtap="switchRightTab">限时特惠</view> -->
+        <view class="type-item {{curNav == item.typeId ? 'active-common-color' : ''}}" wx:for="{{typeList}}" wx:key="typeList" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.typeId}}">{{item.typeName}}</view>
+    </view>
+    <view class="goods-content">
+        <!-- <view class="type-title">{{typeName}}</view> -->
+        <view class="goods-list" wx:if="{{goodsList.length>0}}">
+            <view wx:for="{{goodsList}}" class="goods-l" wx:for-index="index" wx:key="*goodsList" wx:for-item="goods">
+                <view class="goods-item" bindtap="goGoodsDetail" data-index="{{index}}">
+                    <image class="goods-image" src="{{goods.goodRecommendPic}}" mode="widthFix"></image>
+                    <text class="goods-name wenzi">{{goods.goodsName}}</text>
+                    <view class="goods-price">
+                        <text class="sellPrice">￥{{goods.sellPrice}}元</text>
+                        <text class="good-pay">购买</text>
+                    </view> 
+                </view>
+            </view>
+        </view>
+        <view class="nodata" wx:elif="{{isLoad}}">加载中...</view>
+        <view class="nodata" wx:else>该类型暂无商品</view>
+    </view>
+    <view class="show_search" style="top:{{top}}px;height:{{winHeight}}rpx">
+        <block wx:if="{{showClearBtn1}}" wx:for="{{searchGoodslist}}" wx:for-index="index" wx:for-item="items" wx:key="searchGoodslist">
+            <view class="li" data-item="{{items}}" bindtap="goDetailFromSearch">{{items.goodsName}}</view>
+        </block>
+    </view>
+</view>

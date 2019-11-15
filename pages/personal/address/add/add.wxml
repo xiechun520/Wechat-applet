@@ -1,0 +1,71 @@
+<!--pages/personal/address/add/add.wxml-->
+<view class="body">
+    <form bindsubmit="button_submit">
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">收货人</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="deliveryName" value="{{deliveryName}}" type="text" placeholder="请输入收货人姓名" placeholder-style="font-size:14px;"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="deliveryPhone" value="{{deliveryPhone}}" type="digit" placeholder="请输入手机号" placeholder-style="font-size:14px;"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">邮编</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="postCode" value="{{postCode}}" type="number" placeholder="选填" placeholder-style="font-size:14px;"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地区</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker class="weui-picker" name="region" mode="region" value="{{region}}" bindchange="bindRegionChange">
+                        <view class="weui-input">{{region[0]}} - {{region[1]}} - {{region[2]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">收货地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" name="shoppingAddress" value="{{shoppingAddress}}" type="text" placeholder="请输入收货地址" placeholder-style="font-size:14px;"></textarea>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">设为默认</view>
+                <view class="weui-cell__ft">
+                    <switch checked="{{isDefault}}" name="isDefault"  bindchange="switchChange" color="#41A18D"/>
+                </view>
+            </view>
+        </view>        
+        <view wx:if="{{deliveryPhone}}" class="weui-cells weui-cells_after-title" style="border-bottom: 1px ">
+            <button class="delete_address" bindtap="showDeleteAddress">删除地址</button>
+        </view>
+        <view class="tips">{{tip}}</view>
+        <button class="confirm_view back-commmon-color" formType="submit">{{button}}</button>
+    </form>
+</view>

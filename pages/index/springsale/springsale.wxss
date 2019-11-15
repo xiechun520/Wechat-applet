@@ -1,0 +1,98 @@
+/* pages/index/springsale/springsale.wxss */
+page{
+  background: #f6f6f6;
+    /* padding-bottom: 50rpx; */
+}
+.hotscalebox{
+  width: 750rpx;
+  padding: 16rpx;
+}
+.hslowbox{
+  width: 344rpx;
+  /* height:550rpx; */
+  background:#fff;
+  margin-top: 14rpx;
+  margin-left: 14rpx;
+  float:left;  
+  padding-bottom: 20rpx;
+}
+.img-style{
+  width:344rpx;
+  height:344rpx;
+  padding-bottom:4rpx;
+  background: #fff;
+}
+.textstyle{
+  width:300rpx;
+  height: 90rpx;
+  font-family: MicrosoftYaHeiLight;                       
+  font-size:30rpx;
+  margin-left: 16rpx; 
+}
+.slhao{
+   display: -webkit-box;
+   word-break: break-all;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp:2;
+}
+.text1{
+  width:auto;
+  height:40rpx;
+  display: flex; 
+  justify-content:space-around;
+  letter-spacing:3rpx; 
+  background-color:#fff;
+  margin-top:8rpx;
+  margin-left: 10rpx;
+}
+.fontsize{
+  font-size: 26rpx;
+  color:#f80505;
+}
+.textgoods{
+  font-size: 26rpx;
+  border:1rpx solid #f80505;
+  color:#f80505;
+  border-radius:20rpx;
+  padding:0rpx 10rpx;
+  margin:0rpx 20rpx 0rpx 100rpx;
+}
+.progressstyle{
+  width:310rpx;
+  color:#f80505;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.progress-shu{
+  width: 270rpx;
+  height:25rpx;
+  margin-top: 15rpx;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16rpx;
+}
+.proliang{
+  width: 100rpx;
+  height:25rpx;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16rpx;
+  
+
+}
+.wenzidx{
+  width: 100%;
+  font-size: 20rpx;
+  word-wrap: none;
+  float:left;
+}
+.bottom_box{
+  display: flex;
+  width: 100%;
+  height: 40rpx;
+  /* background:red; */
+}

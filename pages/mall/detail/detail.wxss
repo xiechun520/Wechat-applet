@@ -1,0 +1,530 @@
+/* pages/mall/detail/detail.wxss */
+.head_bg {
+	height: 750rpx;
+}
+
+.goods-image {
+	display: block;
+	width: 750rpx;
+	height: 750rpx;
+}
+
+.container1 {
+	background: #F8F8F8;
+}
+
+.me-bg {
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+}
+
+.me-bg1 {
+	width: 100%;
+	background: #FFF;
+}
+
+.me-bg1 image {
+	display: block;
+	width: 100%;
+}
+
+.vcard_wrap {
+	background: #FFF;
+}
+
+.vcard_up {
+	box-sizing: border-box;
+	/*    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;*/
+	width: 100%;
+	padding: 40rpx 24rpx;
+}
+
+.vcard_up_l {
+	font-size: 28rpx;
+	width: 100%;
+	color: #999;
+}
+
+.vcard_up_r {
+	width: 25%;
+	margin: 0 auto;
+	text-align: right;
+}
+
+.firstprice {
+	font-size: 26rpx;
+	display: inline-block;
+}
+
+.goods-name {
+	font-size: 32rpx;
+	display: block;
+}
+
+.goods-price {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #E51C23;
+}
+
+.sec-kill text {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #E51C23;
+}
+
+.vcard_down {
+	font-size: 28rpx;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 26rpx;
+	color: #666;
+}
+.vcard_down p{
+  margin-top:0;
+}
+
+.vcard_down img {
+	width: 100% ! important;
+}
+
+.detail-title-wrapper {
+	padding: 10rpx 26rpx;
+	background: #F8F8F8;
+}
+
+.detail-title-wrapper .detail-title {
+	font-size: 28rpx;
+	padding-left: 26rpx;
+	color: #444;
+	background: url(http://www.haoshi360.com/xcximages/imagefl-bg.png) no-repeat left center;
+}
+
+.bottom-wrapper {
+	position: fixed;
+	z-index: 100;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	width: 100%;
+	text-align: center;
+  background: #fff;
+	align-items: top;
+	justify-content: space-between;
+}
+
+.bottom-wrapper .tabbar-cart, .bottom-wrapper .tabbar-collage {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 126rpx;
+	height: 100rpx;
+	padding: 10rpx 0;
+	text-align: center;
+	border-radius: 0;
+	background: #F7F7F7;
+
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.bottom-wrapper .tabbar-cart text, .bottom-wrapper .tabbar-collage text {
+	font-size: 24rpx;
+	line-height: 1;
+	display: block;
+	margin-top: 12rpx;
+	color: #898989;
+}
+
+.bottom-wrapper .tabbar-cart image, .bottom-wrapper .tabbar-collage image {
+	display: block;
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 10rpx;
+}
+
+.bottom-wrapper .buy-now {
+	width: 250rpx;
+	height: 100rpx;
+	color: #FFF;
+	background: #FF3825;
+}
+
+.bottom-wrapper .buy-text {
+	font-size: 32rpx;
+	line-height: 100rpx;
+	display: block;
+}
+
+.bottom-wrapper .join-cart {
+	width: 250rpx;
+	height: 100rpx;
+	color: #FFF;
+	border-radius: 0;
+	background: #FF9A26;
+}
+
+.kefu1 {
+	position: fixed;
+	right: 0;
+	bottom: 100rpx;
+	padding: 10rpx;
+	border-radius: 50%;
+	background: #E51C23;
+}
+
+.buyMask {
+	position: fixed;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.buyMask .buyBody {
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	width: 100%;
+	background: #FFF;
+}
+
+.buyMask .buyBody .address {
+	height: 60rpx;
+	padding: 6rpx 30rpx;
+}
+
+.buyMask .buyBody .buy-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.buyMask .buyBody .buy-bottom .buy-bottom-left {
+	line-height: 100rpx;
+	float: left;
+	height: 100rpx;
+	padding-left: 26rpx;
+}
+
+.buyMask .buyBody .buy-bottom .buy-bottom-left .price {
+	font-size: 24rpx;
+	color: #FE3D3E;
+}
+.buyMask .buyBody .buy-bottom .buy-bottom-right {
+	line-height: 100rpx;
+	float: right;
+	height: 100rpx;
+	color: #FFF;
+	border-radius: 0;
+	background: #F60;
+}
+
+.orderListWrap {
+	margin-bottom: 90rpx;
+	padding: 26rpx;
+}
+
+.orderListWrap .orderListItem {
+	overflow: hidden;
+	width: 100%;
+	padding: 6rpx 0;
+	color: #666;
+	border-bottom: 1px solid #CCC;
+}
+.noMore{
+  font-size:26rpx;
+  text-align:center;
+}
+
+.orderListWrap .orderListItem image {
+	float: left;
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+}
+
+.orderListWrap .orderListItem .orderListItemContent {
+	line-height: 60rpx;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	width: 88%;
+	height: 60rpx;
+	padding-left: 20rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.good_choose_layer {
+	position: fixed;
+	z-index: 9;
+	top: 0rpx;
+	left: 0rpx;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+
+.good_choose {
+    position: fixed;
+    z-index: 999999;
+    bottom: 0px;
+    left: 0px;
+    overflow: sroll;
+    width: 100%;
+    height: 65%;
+    padding-bottom: 100rpx;
+    background: #FFF;
+}
+
+.good_choose .info {
+    position: relative;
+    top: -30rpx;
+    width: 100%;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.good_choose .info .left {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.good_choose .info .left image {
+    width: 160rpx;
+    height: 160rpx;
+    border: 1px solid #DDD;
+    border-radius: 10rpx;
+}
+
+.good_choose .info .right {
+    margin-top: 50rpx;
+    width: 520rpx;
+    align-self: flex-end;
+}
+
+.good_choose .info .right .name {
+    font-size: 24rpx;
+    color: #4C4C4C;
+}
+
+.good_choose .info .right .price {
+    font-size: 24rpx;
+    margin-top: 24rpx;
+    color: #FE3D3E;
+}
+
+.good_choose .info .right .stock {
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+    color: #999;
+}
+
+.good_choose .sub {
+    font-size: 18px;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 100rpx;
+    text-align: center;
+    color: #FFF;
+    background: #FF3825;
+}
+
+.cart {
+	line-height: 30px;
+	position: fixed;
+	right: 10px;
+	bottom: 12%;
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	text-align: center;
+	color: #333;
+	border-radius: 30px;
+	background: #FD9A34;
+}
+
+.cart image {
+	width: 80%;
+	height: 80%;
+	-webkit-transform: translatey(6px);
+	transform: translatey(6px);
+}
+
+.contactUs {
+	line-height: 30px;
+	position: fixed;
+	right: 4px;
+	bottom: 20%;
+	float: left;
+	width: 36px;
+	height: 36px;
+	margin-left: 5px;
+	padding-right: 0;
+	padding-left: 0;
+	text-align: center;
+	color: #333;
+	border-radius: 40px;
+}
+
+.contactUs image {
+	width: 36px;
+	height: 36px;
+}
+
+.spec {
+	padding: 24rpx 48rpx;
+	border-top: 1px solid #EEE;
+}
+.gsbox{
+  overflow: scroll;
+  max-height: 74%;
+}
+.spec-name {
+	font-size: 24rpx;
+	margin-top: 24rpx;
+}
+
+.spec-item-hull {
+	display: flex;
+
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.spec-item {
+	font-size: 24rpx;
+	line-height: 36rpx;
+	/* width: 180rpx; */
+  padding: 0rpx 10rpx;
+	margin-top: 18rpx;
+	margin-right: 24rpx;
+	text-align: center;
+	color: #999;
+	border: 1px solid #eeeeee;
+	border-radius: 18rpx;
+	background: #FFF;
+  min-width: 130rpx;
+}
+
+.spec .high-light {
+	color: #41A18D;
+	border: 1px solid #41A18D;
+}
+
+.number {
+	padding: 60rpx 26rpx 100rpx 26rpx;
+	border-top: 1px solid #EEE;
+}
+
+.number .count-title {
+	float: left;
+}
+
+.number .count {
+	float: right;
+	padding: 4rpx 10rpx;
+	background: #F8F8F8;
+}
+
+.number .count .minus {
+	display: inline-block;
+	padding: 0 10rpx;
+	background: #F5F5F5;
+}
+
+.number .count .showNum {
+	display: inline-block;
+	min-width: 60rpx;
+	padding: 0 20rpx;
+	text-align: center;
+}
+
+.number .count .plus {
+	display: inline-block;
+	padding: 0 10rpx;
+	background: #F5F5F5;
+}
+.share {
+    width: 60rpx;
+    height: 60rpx;
+    background: url(http://www.haoshi360.com/xcximages/personal/mall-share1.png) no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 40rpx;
+    right: 40rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.zhezhao {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.action-area {
+    width: 100%;
+    height: 360rpx;
+    background: #ddd;
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.action-btn-area {
+    background: #fff;
+    height: 270rpx;
+    z-index: 100000;
+}
+
+.action-btn {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    transform: translateY(20%);
+}
+
+.quit {
+    margin-top: 10rpx;
+    background: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.action-btn image {
+    height: 120rpx;
+    width: 120rpx;
+}
+
+.weixin {
+    padding-top: 10rpx;
+}
+
+.action-btn button {
+    line-height: 1.8;
+    border: none;
+    border-radius: 0;
+    font-size: 26rpx;
+}

@@ -1,0 +1,51 @@
+/* pages/personal/score/score.wxss */
+.redeem {
+	overflow: hidden;
+	width: 94%;
+	margin: 0 auto;
+	padding: 0;
+}
+.redeem_shop {
+	float: left;
+	width: 47%;
+	margin: 12px 0 0 0;
+}
+.redeem_shop:nth-child(even) {
+	margin-left: 12px;
+}
+.redeem_shop_img {
+	width: 100%;
+	height: 136px;
+	text-align: center;
+  position:relative;
+}
+.redeem_shop_img image {
+	width: 100%;
+	height: 100%;
+}
+.redeem_shop_txt {
+	font-size: 15px;
+	line-height: 40px;
+	overflow: hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+	text-align: left;
+	white-space: nowrap;/* 不换行 */
+	text-indent: 12px;
+	text-overflow: ellipsis;/* 当对象内文本溢出时显示省略标记(...) */
+	word-break: keep-all;/* 不换行 */
+}
+.redeem_shop_btn {
+	font-size: 28rpx;
+	line-height: 26px;
+	width: 90%;
+	height: 26px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #fff;
+	border: 0;
+	border-radius: 4px;
+	background: #F63;
+}

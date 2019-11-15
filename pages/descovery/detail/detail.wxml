@@ -1,0 +1,80 @@
+<!--pages/descovery/detail/detail.wxml-->
+<view class="body">
+    <view class="news" style="border-bottom:1px solid #eee">
+        <view class="news_author">
+            <view class="author_info" wx:if="{{Lists.publisherName}}">
+                <image class="author_avator" mode="aspectFill" src="{{imgCommonUrl}}/vij365/guest-avator.png"></image>
+                <text class="author_name">{{Lists.publisherName}}</text>
+            </view>
+        </view>
+        <text class="news_tit">{{Lists.descoveryTitle}}</text>
+        <text class="news_time">{{Lists.publishTime}}</text>
+        <view class="news_content">
+            <rich-text nodes="{{Lists.descoveryDetails}}"></rich-text>
+        </view>
+        <view class="box mb50">
+            <view class="news_user news_bottom">
+                <view class="n_time">
+                    <view class="n_tl" style="color: #fff">
+                        233{{List.publishTime}}
+                    </view>
+                    <view class="n_tr">
+                        <!-- 作者：{{List.dscvPublisher.nickName}} -->
+                        阅读数：{{Lists.readCount}}
+                    </view>
+                </view>
+            </view>
+            <view class="box_title b20">
+                <image class="icon_img" src="/images/dicon8.png"></image>
+                <span>评论列表：</span>
+            </view>
+            <view wx:if="{{comment[0]==undefined}}" class="uncomment">暂无最新评论</view>
+            <block wx:for="{{comment}}" wx:key="*this">
+                <view class="comment_list">
+                    <ul>
+                        <li class="itemi">
+                            <view class="itemi_title">
+                                <image class="user_img" src="{{item.headImage}}"></image>
+                                <span>{{item.nickName+"："}}</span>
+                                <span style="color:#666666">{{item.messageContent}}</span>
+                            </view>
+                            <ul wx:if="{{item.addedMessage[0].messageContent[0]!=undefined}}">
+                                <li class="itemj">
+                                    <span class="display:inline-block; padding-right:10rpx; color:#6D6D6D;">-追加评论-</span><span>{{item.addedMessage[0].messageContent}}</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </view>
+            </block>
+        </view>
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="commodity_screen" catchtap="HideModal" wx:if="{{show}}"></view>
+        <view animation="{{animationData}}" wx:if="{{show}}" class="commodity_attr_box">
+            <view class="input-view">
+                <textarea name="messageContent" type="text" class="input-style" placeholder="写评论" />
+                </view>
+                <view class="btn-view">
+                    <button catchtap="hidebtn" type="default" class="btn-cancel" style="padding:0rpx 10rpx; width: 100rpx; background-color: #39B4F3; border-radius: 10rpx; color: #fff; font-size: 26rpx;">取消</button>
+                    <button formType="submit" type="default" class="btn-cancel" style="margin-right:20rpx; padding:0rpx 10rpx; width: 100rpx; background-color: #39B4F3; border-radius: 10rpx; color: #fff; font-size: 26rpx;">确定</button>
+                </view>  
+            </view>
+        </form>
+
+         <view class="ope_box">
+            <view class="btn_r">
+                <view class="setbtn" catchtap="clickbtn">
+                    <span>写评论...</span>
+                </view>
+            </view>
+            <view class="btn_l">
+                 <view class="btn_box" catchtap="switchbtn1">
+                    <view wx:if="{{points != 0}}" class="bubble">{{points}}</view>
+                    <image wx:if="{{switchbtn1 == 0}}" src="{{imgCommonUrl}}/xcximages/d1.png"/>
+                    <image wx:else src="{{imgCommonUrl}}/xcximages/d2.png"/>
+                </view> 
+            </view>
+        </view> 
+
+    </view>

@@ -1,0 +1,28 @@
+<view class="search-com1">
+    <view class="text-left"><text >相关商品列表</text></view>
+</view>
+<view class="search-com2" >  
+        <view wx:if="{{showNotData}}" >
+          <text class = "notdata">你搜索的数据不存在！</text>
+        </view>
+        <view wx:if="{{!showNotData}}" class="search-text" wx:for="{{searchGoodslist}}" wx:for-index="index" wx:key="list" wx:for-item="items" bindtap="goGoodsDetail" data-goodsId="{{items.goodsId}}">
+            <view>
+              <image class="search-image" src="{{items.headerImg}}"  ></image>
+            </view>
+            <view class="search-text1 text-left" data-item="{{items}}">
+                <view class="text">{{items.goodsName}}</view>
+                <view class="guige">
+                    <text  wx:for="{{items.style}}" wx:for-item="style">{{style}}</text>
+                    <!-- <text>1208*750</text> -->
+                </view>
+            <view class='search-hei'> 
+                <text>￥{{items.sellPrice}}</text>
+                <!-- <text class="search-buy">购买</text> -->
+            </view> 
+            
+            </view> 
+            
+        </view>  
+</view>
+
+

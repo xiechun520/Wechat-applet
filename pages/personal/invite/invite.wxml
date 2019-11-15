@@ -1,0 +1,22 @@
+<!--pages/personal/invite/invite.wxml-->
+<view class="body" wx:if="{{user_list.length > 0}}">
+          <block wx:for="{{user_list}}" wx:key="userList">
+              <view class="member_list">
+              <view class="member_list_l">
+                <image wx:if="{{item.headImage}}"  mode="scaleToFill" src="{{item.headImage?item.headImage:'http://www.vij365.com/xcximages/touxiang2.png'}}"></image>
+                <image wx:else mode="scaleToFill" src="{{imgCommonUrl}}/xcximages/touxiang2.png"></image>
+              </view>
+              <view class="member_list_r">
+                <view class="member_t">
+                <text class="member_name" wx:if="{{item.realName}}">{{item.realName}}</text>
+                <text class="member_name" wx:elif="{{item.nickName}}">{{item.nickName}}</text>
+                <!-- <span class="member_role">总经理</span> -->
+                </view>
+                <view class="member_com">{{item.createTime}}</view>
+              </view>
+              </view>
+          </block>
+  </view>
+  <view wx:else class="nodata">
+  	  <text>暂无邀请数据</text>
+  </view>

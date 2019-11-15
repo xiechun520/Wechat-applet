@@ -1,0 +1,28 @@
+@import './weui.wxss';
+view {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.active-common-color{
+    color:#1DAE84 !important;
+    background-color: #f6f6f6;
+}
+.btn-common-color{
+    color:#1DAE84 !important;
+}
+.back-commmon-color{
+    background: #1DAE84 !important;
+}
+.font-common-color{
+    color:#1DAE84 !important;
+}
+.border-bottom-common-color{
+    border-bottom:2px solid #1DAE84 !important;
+}
+.border-common-color{
+    border:1px solid #1DAE84 !important;
+}

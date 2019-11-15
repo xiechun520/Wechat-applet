@@ -1,0 +1,41 @@
+/* pages/personal/invite/invite.wxss */
+.body{
+    background:#eee;
+  }
+  .member_list{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    margin:0 auto 10rpx auto;
+    width:100%;
+    padding:26rpx;
+    background:#ffffff;
+    box-sizing:border-box;
+  }
+  .member_list_l{
+    width:80rpx;
+    height:80rpx;
+    margin:0;
+  }
+  .member_list_l image{
+      width:80rpx;
+      height:80rpx;
+      border-radius:50%;
+  }
+  .member_list_r{
+    margin:auto 0 auto 26rpx;
+  }
+
+  .member_com{
+    font-size:26rpx;
+    float: right;
+  }
+  .member_name{
+      font-size:30rpx;
+  }
+  .nodata{
+  	 text-align: center;
+  	 margin-top:20%;
+  	 color:#999;
+     font-size:30rpx;
+  }

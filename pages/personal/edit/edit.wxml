@@ -1,0 +1,44 @@
+<!--pages/personal/edit/edit.wxml-->
+<view class="page-edit">
+    <view class="edit-avator" bindtap="changeAvator">
+        <image src="{{userInfo.headImage}}" mode="aspectFill" binderror='loadimage'></image>
+    </view>
+    <view class="edit-item edit-name" bindtap="changeName">
+        <view class="edit-item-left">名字</view>
+        <view class="edit-item-right">
+            <view>{{userInfo.userName}}</view>
+            <image src="/images/xiayiye_03.png"></image>
+        </view>
+    </view>
+    <view class="edit-item edit-name" bindtap="chooseSex">
+        <view class="edit-item-left">性别</view>
+        <view class="edit-item-right">
+            <view>{{userInfo.userSex}}</view>
+            <image src="/images/xiayiye_03.png"></image>
+        </view>
+    </view>
+    <view class="edit-item edit-name">
+        <view class="edit-item-left">生日</view>
+        <view class="edit-item-right">
+            <picker class="weui-picker" mode="date" value="{{dauserInfo.birthday}}" start="1949-10-01" end="2018-09-01" bindchange="chooseBirthday">
+                <view class="weui-input">{{userInfo.birthday}}
+                </view>
+            </picker>
+            <image src="/images/xiayiye_03.png"></image>
+        </view>
+    </view>
+    <view class="edit-item edit-name" bindtap="changePhone">
+        <view class="edit-item-left">手机号</view>
+        <view class="edit-item-right">
+            <view>{{userInfo.phone}}</view>
+            <image src="/images/xiayiye_03.png"></image>
+        </view>
+    </view>
+</view>
+<view class="edit-box" wx:if="{{flagEditBox}}">
+    <input class="weui-input edit-box-input" placeholder="{{editPlaceholderText}}" value="{{editText}}" bindinput="inputTextChange" />
+    <view class="button-box">
+        <view class="edit-box-button" bindtap="editNo">取消</view>
+        <view class="edit-box-button bg" bindtap="editBoxInfo">{{editButtonText}}</view>
+    </view>
+</view>

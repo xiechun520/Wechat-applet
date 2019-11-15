@@ -1,0 +1,87 @@
+/* pages/personal/rank/rank.wxss */
+.content .weui-flex{
+    font-size:30rpx;
+    height: 80rpx;
+    line-height: 60rpx;
+}
+.one{
+    flex: 0 0 120rpx;
+    text-align: center;
+}
+.three{
+    text-align: center;
+}
+
+.headimage image{
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+} 
+.image image{
+    width:120rpx;
+    height:120rpx;
+    border-radius:50%;
+}
+.headimage{
+    width: 80rpx;
+    float: left;
+    margin-right:20rpx;
+}
+.name,.score{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size:28rpx;
+}
+.list{
+    padding:30rpx 0;
+    border-bottom: 1px solid #eee;
+}
+.weui-badge {
+padding:.15em .4em;
+min-width:8px;
+border-radius:18px;
+background-color:#00C48B;
+color:#FFFFFF;
+line-height:1.2;
+text-align:center;
+font-size:36rpx;
+vertical-align:middle;
+}
+.diyi{
+    background: #d9d919;
+}
+.dier{
+    background: #e6e8fa;
+}
+.disan{
+    background: #b87333;
+}
+.header{
+    width: 100%;
+    background:#00C48B;
+    padding:10rpx;
+    position: fixed;
+}
+.content{
+    padding-top:150rpx;
+}
+.body{
+    position: relative;
+}
+.header .weui-flex{
+  align-items:center;/*垂直居中*/
+  font-size:28rpx;
+}
+.headerzone{
+    flex: 0 0 140rpx;
+}
+.headerone{
+    flex:  0 0 180rpx;
+}
+.headertwo{
+    flex: 0 0 280rpx
+}
+.style{
+  color: #fff;
+}

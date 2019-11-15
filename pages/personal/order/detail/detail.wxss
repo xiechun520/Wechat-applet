@@ -1,0 +1,91 @@
+/* pages/personal/order/detail/detail.wxss */
+view {
+  box-sizing: border-box;
+}
+.order-detail {
+  width: 100%;
+}
+.order-title {
+  border-top: 20rpx solid #F2F2F2;
+  width: 100%;
+  padding: 12rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-id {
+  font-size: 24rpx;
+  color: #777;
+}
+.order-stutas {
+  font-size: 24rpx;
+  color: #41a18d;
+}
+.order-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 12rpx 24rpx;
+}
+.order-iamge {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.order-content-middle {
+  width: 400rpx;
+  height: 180rpx;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; */
+}
+.order-name {
+  font-size: 32rpx;
+  color: #444;
+}
+.order-spec {
+  font-size: 28rpx;
+  color: #999;
+}
+.order-content-right {
+  padding: 10rpx 0;
+  height: 200rpx;
+}
+.order-content-right .order-price,
+.order-content-right .order-number {
+  text-align: right;
+  font-size: 30rpx;
+  color: #333;
+}
+.order-counts {
+  padding: 0 24rpx;
+}
+.counts-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.counts-item text {
+  font-size: 30rpx;
+  color: #666;
+}
+.counts-item .important-text {
+  font-size: 32rpx;
+  color: #333;
+}
+.counts-item .price-text {
+  font-size: 32rpx;
+  color: #f37674;
+  font-weight: bold;
+}
+.order-more {
+  padding: 36rpx 24rpx;
+  border-top: 20rpx solid #F2F2F2;
+}
+.order-more .order-item {
+  font-size: 24rpx;
+  color: #777;
+}

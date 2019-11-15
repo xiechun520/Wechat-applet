@@ -1,0 +1,114 @@
+<!--pages/shopcar/index.wxml-->
+<view class="header-cart">
+  <text class="header-txt">购物车</text>
+  <view wx:if="{{cartList.length>0}}" class="edit-button back-commmon-color" bindtap="shouDel">{{bianjiTxt}}</view>
+</view>
+<view class="container1" style="padding-bottom:80rpx;">
+<view wx:if="{{!isLoad}}">
+    <view class="cart_main" wx:if="{{cartList.length>0}}||{{xjlist.length>0}}">
+        <block wx:for="{{cartList}}" wx:key="cartList">
+            <view class="cart_good">
+                <view class="ico" bindtap="choose" data-index="{{index}}" data-selected="{{item.selected}}" >
+                  <image wx:if="{{item.selected}}" src="/images/greenoval.png" ></image>
+                  <image wx:else src="/images/no_select.png"></image>
+                </view>
+                <view class="img" bindtap="goDetail" data-goodid="{{item.goodsId}}">
+                    <image src="{{item.carGoods.goodsImage}}" mode="aspectFill"></image>
+                </view>
+                <view class="info">
+                    <view class="cart-goods-name">{{item.carGoods.goodsName}}</view>
+                    <view class="cart-goods-spec" wx:if="{{item.goodsSpec}}">{{item.goodsSpec.type1+" "+item.goodsSpec.type2}}</view>
+                    <view class="del" style="display:{{display}}" data-index="{{index}}" bindtap="deleteGoods">
+                        <image mode="aspectFilt"  class="icon-delete"></image>
+                    </view>
+                </view>
+                <view   class="other">
+                    <view class="price" bindtap="goDetail" data-goodid="{{item.goodsId}}">￥{{item.goodsSpec?item.goodsSpec.price:item.carGoods.sellPrice}}元 </view>
+                    <view class="num" wx:if="{{item.carGoods.isSelled !== 0}}">
+                        <view class="leftnav" bindtap="total_sub" data-index="{{index}}">-</view>
+                        <input type="number" class="shownum" value="{{item.number}}" data-index="{{index}}" bindinput="bindIptCartNum" />
+                        <view class="rightnav normal" bindtap="total_add" data-index="{{index}}">+</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        
+        <view class="xiajiabox">
+         <view class="textxj" >
+            <text bindtap="delxj" wx:if="{{xjlist.length > 0}}">
+              清除失效商品
+            </text>
+         </view>
+          <block wx:for="{{xjlist}}" wx:key="cartList">
+            <view class="cart_good">
+                <view class="xiajia" wx:if="{{item.carGoods.isSelled == 0}}">
+                  商品已下架
+                </view>
+                <view class="xiajia" wx:if="{{item.carGoods.goodsStatus == 2}}">
+                  商品已删除
+                </view>
+                <view class="xiajia1">
+                    失效
+                </view>
+                <view class="ico"  data-index="{{index}}" data-selected="{{item.selected}}" >
+                  
+                </view>
+                <view class="img" bindtap="goDetail" data-goodid="{{item.goodsId}}">
+                    <image src="{{item.carGoods.goodsImage}}" mode="aspectFill"></image>
+                </view>
+                <view class="info">
+                    <view class="cart-goods-name">{{item.carGoods.goodsName}}</view>
+                    <view class="cart-goods-spec" wx:if="{{item.goodsSpec}}">{{item.goodsSpec.type1+" "+item.goodsSpec.type2}}</view>
+                    <view class="del" style="display:{{display}}" data-index="{{index}}" bindtap="deleteGoods">
+                        <image mode="aspectFilt"  class="icon-delete"></image>
+                    </view>
+                </view>
+                <view   class="other">
+                    <view class="price" bindtap="goDetail" data-goodid="{{item.goodsId}}">￥{{item.goodsSpec?item.goodsSpec.price:item.carGoods.sellPrice}}元 </view>
+                    <!-- <view class="num" wx:if="{{item.carGoods.isSelled !== 0}}">
+                        <view class="leftnav" bindtap="total_sub" data-index="{{index}}">-</view>
+                        <input type="number" class="shownum" value="{{item.number}}" data-index="{{index}}" bindinput="bindIptCartNum" />
+                        <view class="rightnav normal" bindtap="total_add" data-index="{{index}}">+</view>
+                    </view> -->
+                </view>
+            </view>
+        </block>
+        </view>
+
+        <view class="cart_pay" wx:if="{{editStatus==0}}">
+            <view class="all">
+                <view type="success" class="ico" bindtap="selectAll">
+                    <image wx:if="{{selectAllStatus}}" src="/images/greenoval.png"></image>
+                    <image wx:else src="/images/no_select.png"></image>
+                </view>
+                <span class="t">全选</span>
+            </view>
+            <view class="paysub back-commmon-color" bindtap="goSubmitOrderPage" data-selectedNum="{{selectedNum}}">结算({{selectedNum}})</view>
+            <view class="text">合计：￥{{totalPrice}}</view>
+        </view>
+        <view class="cart_pay" wx:else>
+            <view class="all">
+                <view type="success" class="ico" bindtap="deltAll">
+                    <image wx:if="{{selectAllStatus}}" src="/images/greenoval.png" class="iconimage"></image>
+                    <image wx:else src="/images/no_elected.png"></image>
+                </view>
+                <span class="t">全选</span>
+            </view>
+            <view class="paysub back-commmon-color" bindtap="deleteGoodses" data-selectedNum="{{selectedNum}}">删除</view>
+        </view>
+    </view>
+    <view wx:if="{{cartList.length===0}}" class="card_no">
+            <image src="../../images/3_03.png"></image>
+            <view class="hs-title">
+                <text>购物车快饿瘪了</text>
+                <text>主人快去给我找点东西吧</text>
+            </view>
+            <view class="card_no_menu " bindtap="goShop"> 去逛逛 </view>
+    </view>
+    
+    </view>
+    <view class="weui-loadmore" wx:else>
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+</view>

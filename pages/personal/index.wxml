@@ -1,0 +1,118 @@
+<!--pages/personal/index.wxml-->
+<view class="container" style="padding-bottom:40rpx;">
+    <view class="body">
+        <view class="top">
+         <view class="top-left">
+          <view bindtap="goScore">等级</view>
+          <view bindtap="goScore">{{userInfo.level?userInfo.level:0}}</view>
+            <navigator url="/pages/personal/game/game" class="line1">庄园</navigator>
+          </view>
+            <navigator url="edit/edit?groupId={{groupId}}">
+                <view class="top-center">
+                    <view class="touxiang">
+                        <image wx:if="{{userInfo.headImage}}" src="{{userInfo.headImage}}"></image>
+                        <image wx:else src="{{imgCommonUrl}}/xcximages/touxiang2.png"></image>
+                    </view>
+                    <view style="font-size:28rpx">{{userInfo.userName?userInfo.userName:userInfo.nickName}}</view>
+                </view>
+            </navigator>
+            <view class="top-right">
+                <view bindtap="goScore">积分</view>
+                <view bindtap="goScore">{{userInfo.integral?userInfo.integral:0}}</view>
+                <navigator url="score/score" class="line1">兑换</navigator>
+            </view>
+        </view>
+        <view class="con01">
+            <navigator url="/pages/personal/order/order" class="con01-1">
+                <view class="order">
+                    <image style="width:40rpx;height:40rpx;" class="tupian06" src="/images/1111_03.png"></image>我的订单
+                </view>
+                <view class="more">查看全部 <image class="tupian05" style="width:30rpx;height:30rpx;transform:translateY(30%) translateX(6px);" src="/images/xiayiye_03.png"></image>
+                </view>
+            </navigator>
+            <view class="con01-2">
+
+                <navigator url="/pages/personal/order/order?currentTab=0" class="payment">
+                    <view class="tupian">
+                        <image class="tupian01" src="../../ordericon/5_03.png"></image>
+                    </view>
+                    <view class="fontcolor">待付款</view>
+                </navigator>
+                <navigator url="/pages/personal/order/order?currentTab=1" class="payment">
+                    <view class="tupian">
+                        <image class="tupian01" src="../../ordericon/6_03.png"></image>
+                    </view>
+                    <view class="fontcolor">待发货</view>
+                </navigator>
+                <navigator url="/pages/personal/order/order?currentTab=2" class="payment">
+                    <view class="tupian">
+                        <image class="tupian01" src="../../ordericon/3_03.png"></image>
+                    </view>
+                    <view class="fontcolor">待收货</view>
+                </navigator>
+                <navigator url="/pages/personal/order/order?currentTab=3" class="payment">
+                    <view class="tupian">
+                        <image class="tupian01" src="../../ordericon/2_03.png"></image>
+                    </view>
+                    <view class="fontcolor">已收货</view>
+                </navigator>
+                <navigator url="/pages/personal/order/order?currentTab=4" class="payment">
+                    <view class="tupian">
+                        <image class="tupian01" src="../../ordericon/1_03.png"></image>
+                    </view>
+                    <view class="fontcolor">已取消</view>
+                </navigator>
+            </view>
+        </view>
+        <navigator url="/pages/personal/collect/collect" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/44_03.png"></image><text class="wenzustyle">我的收藏</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+         <navigator url="/pages/personal/rank/rank" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/66_03.png"></image><text class="wenzustyle">积分排名</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+        <navigator url="/pages/personal/invite/invite" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/33_03.png"></image><text class="wenzustyle">我的邀请</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+        <navigator url="/pages/personal/message/message" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/55_03.png"></image><text class="wenzustyle">我的信息</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+        
+        <navigator url="/pages/personal/address/address" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/22_03.png"></image><text class="wenzustyle">我的地址</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+         <navigator url="/pages/personal/ticket/ticket" class="con02 con03">
+            <view class="qiandao">
+                <image class="tupian06" src="../../ordericon/11_03.png"></image><text class="wenzustyle">我的优惠卷</text>
+            </view>
+            <view class="check">
+                <image class="tupian05" src="/images/xiayiye_03.png"></image>
+            </view>
+        </navigator>
+                <view class="box"> </view>
+    </view>
+</view>

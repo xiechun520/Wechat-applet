@@ -1,0 +1,42 @@
+<!--pages/personal/rank/rank.wxml-->
+<view class="body">
+<view class="header back-commmon-color">
+   <view class="weui-flex">
+            <view class="weui-flex__item headerzone">
+              <view class="placeholder image">
+                <image wx:if="{{userinfo.headImage}}" mode="scaleToFill" src="{{userinfo.headImage}}"></image>
+                <image wx:else mode="scaleToFill" src="{{imgCommonUrl}}/xcximages/touxiang2.png"></image>
+              </view>
+            </view>
+            <view class="weui-flex__item headerone"><view class="style">{{userinfo.nickName?userinfo.nickName:item.realName}}</view></view>
+            <view class="weui-flex__item headertwo"><view class="style">积分:{{userinfo.integral}}</view></view>
+            <view class="weui-flex__item headerthree"><view class="style">排名:{{userinfo.rank}}</view></view>
+  </view>
+</view>
+<view class="content">
+    <view class="list" wx:for="{{ranklist}}" wx:key="ranklist" wx:for-index="index">
+         <view class="weui-flex">
+            <view class="weui-flex__item one">
+                <view class="placeholder">
+                <view wx:if="{{index+1 == 1}}" class="weui-badge diyi" style="margin-left: 5px;">{{index+1}}</view>
+                <view wx:elif="{{index+1 == 2}}" class="weui-badge dier" style="margin-left: 5px;">{{index+1}}</view>
+                <view wx:elif="{{index+1 == 3}}" class="weui-badge disan" style="margin-left: 5px;">{{index+1}}</view>
+                <view wx:else class="weui-badge back-commmon-color" style="margin-left: 5px;">{{index+1}}</view>
+</view>
+            </view>
+             <view class="weui-flex__item">
+                <view class="placeholder">
+                   <view class="headimage">
+                       <image wx:if="{{item.headImage}}" mode="scaleToFill" src="{{item.headImage}}"></image>
+                        <image wx:else mode="scaleToFill" src="{{imgCommonUrl}}/xcximages/touxiang2.png"></image>
+                   </view>
+                    <view class="name">{{item.nickName}}</view>
+                </view>
+            </view>
+             <view class="weui-flex__item three">
+                <view class="placeholder score">积分:{{item.integral}}</view>
+            </view>
+        </view>
+    </view>
+    </view>
+</view>

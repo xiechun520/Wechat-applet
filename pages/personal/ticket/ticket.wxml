@@ -1,0 +1,46 @@
+<!--pages/personal/ticket/ticket.wxml-->
+<view class="body">
+<view class="lingqu" wx:if="{{ticketList.length > 0}}" bindtap="goCardTicket">去领券</view>
+    <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="tabslist">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'border-bottom-common-color font-common-color' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="content" wx:if="{{ticketList.length > 0}}">
+           <view class="list" wx:for="{{ticketList}}" wx:key="ticketList">
+            <view class="weui-flex">
+                <view class="weui-flex__item one">
+                     <view class="placeholder">
+                     <text class="ticket_type" wx:if="{{item.ticketType == 2}}">满减券</text>
+                      <text class="ticket_type" wx:else>立减券</text>
+
+                     </view>
+                     <view class="placeholder"><text class="money">{{item.ticketMoney}}</text>元</view>
+                </view>
+                <view class="weui-flex__item two">
+                     <view class="placeholder"><text class="title">{{item.ticketName}}</text></view>
+                     <view class="placeholder"><text class="desc">{{item.ticketDesc}}</text></view>
+                </view>
+                <view wx:if="{{item.isUse == 0}}" class="weui-flex__item three">
+                      <view class="placeholder" data-item="{{item}}" bindtap='chooseUserCard' wx:if="{{type == 2}}">选择</view>
+                      <view class="placeholder" wx:else bindtap='goshopping'>去使用</view>
+                </view>
+                 <view wx:elif="{{item.isUse == 1}}" class="weui-flex__item three bg"><view class="placeholder">已使用</view></view>
+                <view wx:else class="weui-flex__item three bg"><view class="placeholder">已失效</view></view>
+            </view>
+         </view>
+      </view>
+      <view class="nodata" wx:else>
+             <view class="nodata_one" wx:if="{{activeIndex == 1}}">你还没有已使用的优惠券哦！</view>
+             <view class="nodata_one" wx:elif="{{activeIndex == 2}}">你还没有已失效的优惠券哦！</view>
+             <view class="nodata_one" wx:else>你还没有未使用的优惠券哦！</view>
+             <view class="nodata_two">
+                <text class="nodata-btn" bindtap='goCardTicket'>马上去领券</text>
+             </view>
+      </view>
+      
+</view>
+<import src="../../../public/template.wxml" />
+<template is="toast" data="{{txt,isShow,iconClass}}"></template>

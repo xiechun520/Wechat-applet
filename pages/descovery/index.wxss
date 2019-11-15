@@ -1,0 +1,115 @@
+/* pages/descovery/index.wxss */
+page{
+    width: 100%;
+    height: 100%;
+}
+.body {
+  background: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper_item {
+  height: auto;
+  background-color: #fff;
+  padding: 0 20rpx;
+}
+
+.swiper_item .banner {
+  width: 100%;
+}
+
+.swiper_item .c_title {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #333;
+}
+
+.swiper_item .img_box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.swiper_item .img_box image {
+  height: 222rpx;
+  border-radius: 10rpx;
+}
+
+.three-open {
+  width: 222rpx;
+}
+
+.two-open {
+  width: 344rpx;
+}
+
+.one-open {
+  width: 100%;
+}
+
+.scroll-h{
+    background: #eee;
+    padding-bottom:50rpx;
+}
+
+.swiper_item+.swiper_item {
+  margin-top: 10rpx;
+}
+
+.swiper_item .c_detailed {
+  margin-bottom: 10rpx;
+  padding-left: 35rpx;
+  font-size: 30rpx;
+  color: #424242;
+}
+
+.swiper_item .c_bottom {
+  padding: 24rpx 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.c_auther, .c_read, .c_like {
+  font-size: 24rpx;
+  color: #666;
+  margin-right: 25rpx;
+}
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #EEE;
+  font-size: 30rpx;
+  white-space: nowrap;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-item {
+  padding: 0 35rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #41A18D;
+  position: relative;
+}
+
+.h1 {
+  height: 320rpx;
+}
+
+.h0 {
+  height: 180rpx;
+}
+.nodata{
+    font-size:30rpx;
+    color:#999;
+    text-align: center;
+    padding-top:200rpx;
+}

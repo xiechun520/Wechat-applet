@@ -1,0 +1,228 @@
+<!--pages/personal/game/game.wxml-->
+<view class="body">
+    <image src="{{imgCommonUrl}}/fomo3d/shouzhi.gif" style="width:120rpx;height:120rpx;position:absolute;right:-10rpx;bottom:180rpx;z-index:1000"/> 
+<image wx:if="{{petInfo.coin>0}}" src="{{imgCommonUrl}}/fomo3d/shouzhi.gif" style="width:80rpx;height:80rpx;position:absolute;left:60rpx;bottom:360rpx;z-index:1000"/> 
+
+    <swiper style="height:100%;">
+    <swiper-item class="one-monket-bg">
+    <!-- <view class="pettop">当前在线:{{count}}</view> -->
+            <view class="header">
+         <view class="coinarea">
+                 <image wx:if="{{playerInfo.headImage}}" src="{{playerInfo.headImage}}" style="float:left"></image>
+                 <image wx:else src="{{imgCommonUrl}}/xcximages/touxiang2.png" style="float:left"></image>
+                 <!-- <view class="dou"></view> -->
+                 <view class="font">{{playerInfo.coin>0?playerInfo.coin:0}}</view>
+         </view>
+    </view>
+    <view class="cloud_one_area"></view>
+    <view class="cloud_two_area"></view>
+    <view class="sun_area"></view>
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> -->
+    <!-- <view class="paiming" bindtap='goToPM'></view>
+    <button class="share" open-type="share" type="plain"></button>
+    <view class="gogl" bindtap='goToGL'></view> -->
+    <view class="share" bindtap='goToMall'></view>
+    <view wx:if="{{showBtn}}" class="eattime" hidden='{{eattimeflag}}'>
+        进食剩余:<text style="padding-left:10rpx">{{eattime}}</text>
+    </view>
+    <view class="{{petInfo.food>0?'eatmonket':'monket'}}" bindtap="showBtn"></view>
+    <view wx:if="{{showBtn}}" class="say" hidden='{{sayflag}}'>{{petInfo.saying}}</view>
+    <view wx:if="{{petInfo.food>0}}" class="wan man"></view>
+    <view wx:else class="wan {{doustatus}}"></view>
+    <view wx:if="{{showBtn}}" class="tishishoudao" hidden='{{isalreadyflag}}'>有金豆可收取啦</view>
+    <!-- <text wx:if="{{petInfo.coin>0}}" class="jindoucount" bindtap='getFood'>
+    {{petInfo.coin>0?petInfo.coin:0}}</text> -->
+    <view wx:if="{{petInfo.coin>0}}" class="weui-badge jindoucount" style="margin-left: 5px;">{{petInfo.coin>0?petInfo.coin:0}}</view>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree one" hidden='{{douflag}}' bindtap='getFood'></view>
+    <!-- <view wx:if="{{petInfo.coin>0}}" class="common_tree two" hidden='{{douflag}}' bindtap='getFood'></view>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree three" hidden='{{douflag}}' bindtap='getFood'></view> -->
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> 
+    <view class="mall" bindtap='goToMall'></view>  -->
+   <view class="givefood" bindtap='givefood'><view class="foodcount">{{playerInfo.food>0?playerInfo.food:0}}g</view></view>
+   <view class="showMessage" hidden='{{showmessageflag}}'>
+      <text class="showwarn">食物不足</text>
+   </view>
+   <view class="shougexiaoguo" hidden='{{shuogeflag}}'></view>
+   <!--遮罩层开始-->
+   <view class="zhezhao" hidden='{{showBtn}}' bindtap='closeModal'>
+      <view class="btn-area">
+          <view class="btn-image gonglue" bindtap='goGongLue'></view>
+          <view class="btn-image wenhou" bindtap='goGongLue'></view>
+          <view class="btn-image xianmei" bindtap='goGongLue'></view>
+          <view class="btn-image songqiubo" bindtap='goGongLue'></view>
+      </view>
+   </view>
+   <!--遮罩层结束-->
+   <!--弹出层开始-->
+   <view class="tanchu" hidden='{{tuankuanflag}}'>
+      <view class="monketlogo" >
+        <view class='center'></view>
+      </view>
+      <view class="closetk" bindtap='closeTuanKuang'>X</view>
+       <view class="sharefont">
+           <view class="shareleft">Hi,欢迎来到我的庄园</view>
+           <view class="shareright">
+               <text style='padding-right:50rpx'>分享发送朋友</text>
+           </view>
+       </view>
+       <view class="shareImg"></view>
+   </view> 
+   <!--弹出层结束-->
+    </swiper-item>
+    <swiper-item class="two-saodi-bg">
+        <!-- <view class="pettop">当前在线:{{count}}</view> -->
+
+          <view class="header">
+         <view class="coinarea">
+                <image wx:if="{{playerInfo.headUrl}}" src="{{playerInfo.headUrl}}" style="float:left"></image>
+                 <image wx:else src="{{imgCommonUrl}}/xcximages/touxiang2.png" style="float:left"></image>
+                 <!-- <view class="dou"></view> -->
+                 <view class="font">{{playerInfo.coin>0?playerInfo.coin:0}}</view>
+         </view>
+    </view>
+    <view class="cloud_one_area"></view>
+    <view class="cloud_two_area"></view>
+    <view class="sun_area"></view>
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> -->
+    <!-- <view class="paiming" bindtap='goToPM'></view>
+    <button class="share" open-type="share" type="plain"></button>
+    <view class="gogl" bindtap='goToGL'></view> -->
+    <view class="share" bindtap='goToMall'></view>
+    <view wx:if="{{showBtn}}" class="eattime" hidden='{{eattimeflag}}'>
+        进食剩余:<text style="padding-left:10rpx">{{eattime}}</text>
+    </view>
+    <view class="{{petInfo.food>0?'saodi':'saodi'}}" bindtap="showBtn"></view>
+    <view wx:if="{{showBtn}}" class="say" hidden='{{sayflag}}'>{{petInfo.saying}}</view>
+    <view wx:if="{{petInfo.food>0}}" class="wan man"></view>
+    <view wx:else class="wan {{doustatus}}"></view>
+    <view wx:if="{{showBtn}}" class="tishishoudao" hidden='{{isalreadyflag}}'>有金豆可收取啦</view>
+    <text wx:if="{{petInfo.coin>0}}" class="jindoucount" bindtap='getFood'>{{petInfo.coin>0?petInfo.coin:0}}</text>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree one" hidden='{{douflag}}' bindtap='getFood'></view>
+    <!-- <view wx:if="{{petInfo.coin>0}}" class="common_tree two" hidden='{{douflag}}' bindtap='getFood'></view>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree three" hidden='{{douflag}}' bindtap='getFood'></view> -->
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view>
+    <view class="mall" bindtap='goToMall'></view>   -->
+   <view class="givefood" bindtap='givefood'><view class="foodcount">{{playerInfo.food>0?playerInfo.food:0}}g</view></view>
+   <view class="showMessage" hidden='{{showmessageflag}}'>
+      <text class="showwarn">食物不足</text>
+   </view>
+   <view class="shougexiaoguo" hidden='{{shuogeflag}}'></view>
+   <!--遮罩层开始-->
+   <view class="zhezhao" hidden='{{showBtn}}' bindtap='closeModal'>
+      <view class="btn-area">
+          <view class="btn-image gonglue" bindtap='goGongLue'></view>
+          <view class="btn-image wenhou"></view>
+          <view class="btn-image xianmei"></view>
+          <view class="btn-image songqiubo"></view>
+      </view>
+   </view>
+   <!--遮罩层结束-->
+    </swiper-item>
+     <swiper-item class="three-touyy-bg">
+         <!-- <view class="pettop">当前在线:{{count}}</view> -->
+
+          <view class="header">
+         <view class="coinarea">
+                <image wx:if="{{playerInfo.headUrl}}" src="{{playerInfo.headUrl}}" style="float:left"></image>
+                 <image wx:else src="{{imgCommonUrl}}/xcximages/touxiang2.png" style="float:left"></image>
+                 <!-- <view class="dou"></view> -->
+                 <view class="font">{{playerInfo.coin>0?playerInfo.coin:0}}</view>
+         </view>
+    </view>
+    <view class="cloud_one_area"></view>
+    <view class="cloud_two_area"></view>
+    <view class="sun_area"></view>
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> -->
+    <!-- <view class="paiming" bindtap='goToPM'></view>
+    <button class="share" open-type="share" type="plain"></button>
+    <view class="gogl" bindtap='goToGL'></view> -->
+    <view class="share" bindtap='goToMall'></view>
+    <view wx:if="{{showBtn}}" class="eattime" hidden='{{eattimeflag}}'>
+        进食剩余:<text style="padding-left:10rpx">{{eattime}}</text>
+    </view>
+    <view class="{{petInfo.food>0?'touyy':'touyy'}}" bindtap="showBtn"></view>
+    <view wx:if="{{showBtn}}" class="say" hidden='{{sayflag}}'>{{petInfo.saying}}</view>
+    <view wx:if="{{petInfo.food>0}}" class="wan man"></view>
+    <view wx:else class="wan {{doustatus}}"></view>
+    <view wx:if="{{showBtn}}" class="tishishoudao" hidden='{{isalreadyflag}}'>有金豆可收取啦</view>
+    <text wx:if="{{petInfo.coin>0}}" class="jindoucount" bindtap='getFood'>{{petInfo.coin>0?petInfo.coin:0}}</text>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree one" hidden='{{douflag}}' bindtap='getFood'></view>
+    <!-- <view wx:if="{{petInfo.coin>0}}" class="common_tree two" hidden='{{douflag}}' bindtap='getFood'></view>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree three" hidden='{{douflag}}' bindtap='getFood'></view> -->
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view>
+    <view class="mall" bindtap='goToMall'></view>   -->
+   <view class="givefood" bindtap='givefood'><view class="foodcount">{{playerInfo.food>0?playerInfo.food:0}}g</view></view>
+   <view class="showMessage" hidden='{{showmessageflag}}'>
+      <text class="showwarn">食物不足</text>
+   </view>
+   <view class="shougexiaoguo" hidden='{{shuogeflag}}'></view>
+   <!--遮罩层开始-->
+   <view class="zhezhao" hidden='{{showBtn}}' bindtap='closeModal'>
+      <view class="btn-area">
+          <view class="btn-image gonglue" bindtap='goGongLue'></view>
+          <view class="btn-image wenhou"></view>
+          <view class="btn-image xianmei"></view>
+          <view class="btn-image songqiubo"></view>
+      </view>
+   </view>
+   <!--遮罩层结束-->
+    </swiper-item>
+    <swiper-item class="four-lyyxjl-bg">
+        <!-- <view class="pettop">当前在线:{{count}}</view> -->
+
+         <view class="header">
+         <view class="coinarea">
+              <image wx:if="{{playerInfo.headUrl}}" src="{{playerInfo.headUrl}}" style="float:left"></image>
+                 <image wx:else src="{{imgCommonUrl}}/xcximages/touxiang2.png" style="float:left"></image>
+                 <!-- <view class="dou"></view> -->
+                 <view class="font">{{playerInfo.coin>0?playerInfo.coin:0}}</view>
+         </view>
+    </view>
+    <view class="cloud_one_area"></view>
+    <view class="cloud_two_area"></view>
+    <view class="sun_area"></view>
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> -->
+    <!-- <view class="paiming" bindtap='goToPM'></view>
+    <button class="share" open-type="share" type="plain"></button>
+    <view class="gogl" bindtap='goToGL'></view> -->
+    <view class="share" bindtap='goToMall'></view>
+    <view wx:if="{{showBtn}}" class="eattime" hidden='{{eattimeflag}}'>
+        进食剩余:<text style="padding-left:10rpx">{{eattime}}</text>
+    </view>
+    <view class="{{petInfo.food>0?'lyyxjl':'lyyxjl'}}" bindtap="showBtn"></view>
+    <view wx:if="{{showBtn}}" class="say" hidden='{{sayflag}}'>{{petInfo.saying}}</view>
+    <view wx:if="{{petInfo.food>0}}" class="wan man"></view>
+    <view wx:else class="wan {{doustatus}}"></view>
+    <view wx:if="{{showBtn}}" class="tishishoudao" hidden='{{isalreadyflag}}'>有金豆可收取啦</view>
+    <text wx:if="{{petInfo.coin>0}}" class="jindoucount" bindtap='getFood'>{{petInfo.coin>0?petInfo.coin:0}}</text>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree one" hidden='{{douflag}}' bindtap='getFood'></view>
+    <!-- <view wx:if="{{petInfo.coin>0}}" class="common_tree two" hidden='{{douflag}}' bindtap='getFood'></view>
+    <view wx:if="{{petInfo.coin>0}}" class="common_tree three" hidden='{{douflag}}' bindtap='getFood'></view> -->
+    <!-- <view class="game" bindtap='gotogame'></view>
+    <view class="friend" bindtap='goToFriend'></view> 
+    <view class="mall" bindtap='goToMall'></view>  -->
+   <view class="givefood" bindtap='givefood'><view class="foodcount">{{playerInfo.food>0?playerInfo.food:0}}g</view></view>
+   <view class="showMessage" hidden='{{showmessageflag}}'>
+      <text class="showwarn">食物不足</text>
+   </view>
+   <view class="shougexiaoguo" hidden='{{shuogeflag}}'></view>
+   <!--遮罩层开始-->
+   <view class="zhezhao" hidden='{{showBtn}}' bindtap='closeModal'>
+      <view class="btn-area">
+          <view class="btn-image gonglue" bindtap='goGongLue'></view>
+          <view class="btn-image wenhou"></view>
+          <view class="btn-image xianmei"></view>
+          <view class="btn-image songqiubo"></view>
+      </view>
+   </view>
+   <!--遮罩层结束-->
+    </swiper-item>
+</swiper>
+</view>
